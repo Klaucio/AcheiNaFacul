@@ -21,7 +21,12 @@ class CreateArtigosTable extends Migration
             $table->string('tipo');
             $table->string('local');
             $table->string('descricao_local');
-            $table->integer('user_id')->references('user_id')->on('users')
+            $table->integer('user_id')->unsigned();
+            $table->integer('categoria_id')->unsigned();
+            $table->foreign('categoria_id')->references('categoria_id')->on('categorias')
+                ->onUpdate('cascade')
+                ->onDelete('set null');
+            $table->foreign('user_id')->references('user_id')->on('users')
             ->onUpdate('cascade')
             ->onDelete('set null');
 

@@ -18,13 +18,11 @@ class CreateDepartamentosTable extends Migration
             $table->string('designacao');
             $table->string('abreviatura');
             $table->integer('faculdade_id')->unsigned();
-            $table->integer('faculdade_id')->references('faculdade_id')->on('faculdades')
+            $table->foreign('faculdade_id')->references('faculdade_id')->on('faculdades')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
-
-
-            $table->timestamps();
+//            $table->timestamps();
         });
     }
 
