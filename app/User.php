@@ -27,4 +27,14 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * @return array
+     */
+    public function roles()
+    {
+        return $this->belongsToMany(User::class);
+    }
+//    public $timestamps=false;
+
+
 }

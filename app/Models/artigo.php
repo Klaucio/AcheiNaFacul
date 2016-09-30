@@ -7,14 +7,28 @@ use Illuminate\Database\Eloquent\Model;
 class artigo extends Model
 {
     //
-    protected $fillable=['nr_utente','tipo','nome','regime','sala','telefone',''];
+    protected $fillable=['tipo','designacao','descricao','foto','local_achado',
+                        'descricao_local','user_id','categoria_id','receptor_id'];
     public $timestamps=false;
 
-    public function projectos(){
+    public function users(){
         return $this->belongsTo(projecto::class);
     }
-    public function membros(){
-        return $this->hasMany(membro::class);
+
+    public function receptor(){
+        return $this->belongsTo(receptor::class);
+    }
+
+    public function comentario(){
+        return $this->hasMany(comentario::class);
+    }
+    public function categoria(){
+        return $this->belongsTo(categoria::class);
+    }
+
+    public function estados()
+    {
+        return $this->belongsToMany(estado::class);
     }
 
 
