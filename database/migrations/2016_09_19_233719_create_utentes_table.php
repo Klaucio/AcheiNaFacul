@@ -15,6 +15,7 @@ class CreateUtentesTable extends Migration
     {
         Schema::create('utentes', function (Blueprint $table) {
             $table->bigInteger('nr_utente');
+            $table->primary('nr_utente');
             $table->string('tipo');
             $table->string('nome');
             $table->string('regime')->nullable();
