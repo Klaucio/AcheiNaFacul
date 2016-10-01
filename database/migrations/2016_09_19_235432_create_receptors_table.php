@@ -17,7 +17,7 @@ class CreateReceptorsTable extends Migration
             $table->bigInteger('nr_utente');
             $table->primary('nr_utente');
             $table->date('data_levantamento');
-            $table->foreign('membro_id')->references('membro_id')->on('membros')
+            $table->foreign('nr_utente')->references('nr_utente')->on('utentes')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->timestamps();

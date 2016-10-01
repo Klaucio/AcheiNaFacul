@@ -25,11 +25,10 @@ class CreateArtigosTable extends Migration
             $table->integer('categoria_id')->unsigned();
             $table->foreign('categoria_id')->references('categoria_id')->on('categorias')
                 ->onUpdate('cascade')
-                ->onDelete('set null');
+                ->onDelete('cascade');
             $table->foreign('user_id')->references('user_id')->on('users')
-            ->onUpdate('cascade')
-            ->onDelete('set null');
-
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
 
         });
     }
