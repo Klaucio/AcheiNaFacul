@@ -1,7 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class artigo extends Model
@@ -12,7 +13,7 @@ class artigo extends Model
     public $timestamps=false;
 
     public function users(){
-        return $this->belongsTo(projecto::class);
+        return $this->belongsTo(User::class);
     }
 
     public function receptor(){

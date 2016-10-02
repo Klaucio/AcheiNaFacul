@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\artigo;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -33,6 +34,10 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(User::class);
+    }
+    public function artigos()
+    {
+        return $this->hasMany(artigo::class);
     }
 //    public $timestamps=false;
 
