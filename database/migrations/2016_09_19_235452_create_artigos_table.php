@@ -27,12 +27,13 @@ class CreateArtigosTable extends Migration
             $table->foreign('categoria_id')->references('categoria_id')->on('categorias')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->foreign('receptor_id_fk')->references('id')->on('receptors')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
             $table->foreign('user_id_fk')->references('user_id')->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->foreign('receptor_id_fk')->references('receptor_id')->on('receptors')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
 
 
         });
