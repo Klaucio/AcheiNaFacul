@@ -14,10 +14,10 @@ class CreateReceptorsTable extends Migration
     public function up()
     {
         Schema::create('receptors', function (Blueprint $table) {
-            $table->bigInteger('nr_utente');
-            $table->primary('nr_utente');
+            $table->bigInteger('receptor_id');
+            $table->primary('receptor_id');
             $table->date('data_levantamento');
-            $table->foreign('nr_utente')->references('nr_utente')->on('utentes')
+            $table->foreign('receptor_id')->references('nr_utente')->on('utentes')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->timestamps();
