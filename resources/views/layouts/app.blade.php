@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -15,74 +18,203 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-
+    {{--Css do template--}}
+    <title>Habitat - A Professional Bootstrap Template</title>
+    <!-- Meta -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="shortcut icon">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
+    <!-- Template CSS -->
+    <link href="{{ asset('css/animate.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/nexus.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/responsive.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css" >
+    <!-- Google Fonts-->
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
+{{--fim do template--}}
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
-        window.Laravel = <?php echo json_encode([
+        window.Laravel =;; <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+        <div id="body-bg">
 
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ url('/login') }}">Login</a></li>
-                            <li><a href="{{ url('/register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+            <!-- Phone/Email -->
+            <div id="pre-header" class="background-gray-lighter">
+                <div class="container no-padding">
+                    <div class="row hidden-xs">
+                        <div class="col-sm-6 padding-vert-5">
 
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ url('/logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
+                                @if (Auth::guest())
+                                    <div class="top-right links">
+                                        <a href="{{ url('/login') }}"><i class="fa fa-home fa-fw"></i>Login</a>
+                                        <a href="{{ url('/register') }}"><i class="fa fa-pencil fa-fw">Register</i></a>
+                                    </div>
+                                    <div class="col-sm-6 text-right padding-vert-5">
+                                        <strong>Email:</strong>&nbsp;achei.fakul@uem.ac.mz
+                                    </div>
+                                @else
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                            {{ Auth::user()->name }} <span class="caret"></span>
                                         </a>
 
-                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a href="{{ url('/logout') }}"
+                                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                    Logout
+                                                </a>
+
+                                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
+                                                </form>
+                                            </li>
+                                        </ul>
                                     </li>
-                                </ul>
-                            </li>
-                        @endif
-                    </ul>
+                                @endif
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </nav>
+            <!-- End Phone/Email -->
+            <!-- Header -->
+            <div id="header">
+                <div class="container">
+                    <div class="row">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="index.blade.html" title="">
+                                <img src={{ asset('/img/logo.png') }} alt="Logo" />
+                            </a>
+                        </div>
+                    {{--<div class="logo">--}}
+                        {{--<div class="col-md-2">--}}
+                            {{--<img src={{ asset('/img/uem.jpg') }} class="img-circle img-fluid">--}}
+                        {{--</div>--}}
+                        {{--<div class="section col-md-10">--}}
+                            {{--<div class="container section col-md-12">--}}
+                                {{--<img src={{ asset('/img/teste1.png') }} class="center-block img-responsive img-thumbnail">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>                        --}}
+                        {{----}}
+                        {{--<!-- End Logo -->--}}
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- End Header -->
+            <!-- Top Menu -->
+            <div id="hornav" class="bottom-border-shadow">
+                <div class="container no-padding border-bottom">
+                    <div class="row">
+                        <div class="col-md-8 no-padding">
+                            <div class="visible-lg">
+                                <ul id="hornavmenu" class="nav navbar-nav">
+                                    <li>
+                                        <a href="{{url('/home')}}"  class="fa-home active">Página Inicial</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{url('/achados')}}"> <span class="fa-copy ">Achados</span></a>
+                                        {{--<ul>--}}
+                                            {{--<li>--}}
+                                                {{--<a href="pages-about-us.html">About Us</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li>--}}
+                                                {{--<a href="pages-services.html">Services</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li>--}}
+                                                {{--<a href="pages-faq.html">F.A.Q.</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li>--}}
+                                                {{--<a href="pages-about-me.html">About Me</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li>--}}
+                                                {{--<a href="pages-full-width.html">Full Width</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li>--}}
+                                                {{--<a href="pages-left-sidebar.html">Left Sidebar</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li>--}}
+                                                {{--<a href="pages-right-sidebar.html">Right Sidebar</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li>--}}
+                                                {{--<a href="pages-login.html">Login</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li>--}}
+                                                {{--<a href="pages-sign-up.html">Sign-Up</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li>--}}
+                                                {{--<a href="pages-404.html">404 Error Page</a>--}}
+                                            {{--</li>--}}
+                                        {{--</ul>--}}
+                                    </li>
+                                    <li>
+                                       <a href="{{url('/perdidos')}}"> <span class="fa-th ">Perdidos</span></a>
+                                        {{--<ul>--}}
+                                            {{--<li>--}}
+                                                {{--<a href="portfolio-2-column.html">2 Column</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li>--}}
+                                                {{--<a href="portfolio-3-column.html">3 Column</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li>--}}
+                                                {{--<a href="portfolio-4-column.html">4 Column</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li>--}}
+                                                {{--<a href="portfolio-6-column.html">6 Column</a>--}}
+                                            {{--</li>--}}
+                                        {{--</ul>--}}
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4 no-padding">
+                            <ul class="social-icons pull-right">
+                                <li class="social-rss">
+                                    <a href="#" target="_blank" title="RSS"></a>
+                                </li>
+                                <li class="social-twitter">
+                                    <a href="#" target="_blank" title="Twitter"></a>
+                                </li>
+                                <li class="social-facebook">
+                                    <a href="#" target="_blank" title="Facebook"></a>
+                                </li>
+                                <li class="social-googleplus">
+                                    <a href="#" target="_blank" title="Google+"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Menu -->
+            <!-- === END HEADER === -->
 
         @yield('content')
     </div>
