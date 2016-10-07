@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('/', 'HomeController');
+Route::resource('perdidos', 'PerdidosController');
+Route::resource('achados', 'AchadosController');
 
 Auth::routes();
 
