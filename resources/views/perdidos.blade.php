@@ -1,3 +1,7 @@
+<?php
+use App\Models\categoria;
+?>
+
 @extends('layouts.app')
 
 @section('content')
@@ -8,7 +12,7 @@
                 <div class="container" style="background-color:#7ADEDE">
                     <div class="row">
                         <div class="col-md-6">
-                            <img src={{ asset('/img/download.jpg') }}  class="img-responsive img-thumbnail">
+                            <img src={{ asset('/img/download.jpg') }}  class="img-responsive img-thumbnail>
                         </div>
                         <div class="col-md-6">
                             <h1>A title</h1>
@@ -28,30 +32,44 @@
             <div class="p-y-3 section">
                 <div class="container">
                     <div class="row">
-
-                        <div class="col-md-6">
-                            <div class="card m-y-1">
-                                <div class="bg-info card-block text-center text-xs-center">
-                                    <h2 class="card-title">Artigos Perdidos
-                                        <span class="label label-default label-pill pull-right">17</span>
-                                    </h2>
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                    @foreach($perdidos as $key => $value)
-
-                                        <li class="list-group-item">
-                                            <h4><strong>{{ $value->designacao }}</strong></h4>
-                                            <img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">
-                                            <span class="label label-default label-pill pull-right">2</span>
-                                        </li>
-                                    @endforeach
-
-                                </ul>
-                                {{--<div class="card-block text-center">--}}
-                                {{--<a href="#" class="btn btn-block btn-primary">Subscribe</a>--}}
-                                {{--</div>--}}
-                            </div>
+                        <div class="w3-container w3-teal">
+                            <h2>Reportar Perdido</h2>
                         </div>
+
+
+                        {!! Form::model($artigo,['action'=>'PerdidosController@store','class'=>'class="w3-container"','files'=>true]) !!}
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <strong>Whoops!</strong> Preencha correctamente os campos!
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        @if ($message = Session::get('success'))
+                            <div class="alert alert-success alert-block">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                <strong>{{ $message }}</strong>
+                            </div>
+                            {{--<img src="images/{{ Session::get('image') }}">--}}
+                        @endif
+                        {!! Form::text('titulo','',['class'=>'w3-input w3-animate-input','placeholder'=>'Titulo do anuncio']) !!}
+                        {!! Form::text('designacao','',['class'=>'w3-input w3-animate-input','placeholder'=>'Achado']) !!}
+                        {!! Form::text('descricao','',['class'=>'w3-input w3-animate-input','placeholder'=>'Descricao do artigo']) !!}
+                        {{--{!! Form::label('data', 'Data em que perdeu') !!}--}}
+                        {!! Form::date('data','',['class'=>'w3-input w3-animate-input']) !!}
+                        {!! Form::select('categoria_id',$categorias,null,['class'=>'w3-select'] ) !!}
+                        {!! Form::text('local','',['class'=>'w3-input w3-animate-input','placeholder'=>'Local onde achou']) !!}
+                        {!! Form::textarea('descricao_local', '', ['class'=>'w3-input w3-animate-input','placeholder'=>'Descricao do Local']) !!}
+                        {!! Form::file('foto','',['class'=>'w3-input w3-animate-input']) !!}
+                        {!! Form::hidden('tipo', 'Perdido')  !!}
+
+                        {!! Form::submit('Submeter', ['class'=>'w3-btn w3-hover-green']) !!}
+                        {!! Form::close() !!}
+
+
 
                     </div>
                 </div>

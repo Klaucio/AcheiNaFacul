@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/w3.css') }}" rel="stylesheet" type="text/css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     {{--Css do template--}}
@@ -31,7 +34,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
     <!-- Template CSS -->
-    <link href="{{ asset('css/animate.css') }}" rel="stylesheet" type="text/css" >
+    {{--<link href="{{ asset('css/animate.css') }}" rel="stylesheet" type="text/css" >--}}
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/nexus.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet" type="text/css" >
@@ -44,7 +47,7 @@
 
     <!-- Scripts -->
     <script>
-        window.Laravel =;; <?php echo json_encode([
+        window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
@@ -140,55 +143,35 @@
 
                                     <li>
                                         <a href="{{url('/achados')}}"> <span class="fa-copy ">Achados</span></a>
-                                        {{--<ul>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-about-us.html">About Us</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-services.html">Services</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-faq.html">F.A.Q.</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-about-me.html">About Me</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-full-width.html">Full Width</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-left-sidebar.html">Left Sidebar</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-right-sidebar.html">Right Sidebar</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-login.html">Login</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-sign-up.html">Sign-Up</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-404.html">404 Error Page</a>--}}
-                                            {{--</li>--}}
-                                        {{--</ul>--}}
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a href="{{ route('achados.index') }}"
+                                                        >
+                                                    Listar Achados
+                                                </a>
+                                                <a href="{{ route('achados.create') }}"
+                                                        >
+                                                   Reportar Achado
+                                                </a>
+
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li>
-                                       <a href="{{url('/perdidos')}}"> <span class="fa-th ">Perdidos</span></a>
-                                        {{--<ul>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="portfolio-2-column.html">2 Column</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="portfolio-3-column.html">3 Column</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="portfolio-4-column.html">4 Column</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="portfolio-6-column.html">6 Column</a>--}}
-                                            {{--</li>--}}
-                                        {{--</ul>--}}
+                                       <a href="{{ URL::to('/perdidos') }}"> <span class="fa-th ">Perdidos</span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a href="{{ route('perdidos.index') }}"
+                                                        >
+                                                   Listar Perdidos
+                                                </a>
+                                                <a href="{{ route('perdidos.create') }}"
+                                                        >
+                                                   Reportar Perdido
+                                                </a>
+
+                                            </li>
+                                        </ul>
                                     </li>
 
                                 </ul>

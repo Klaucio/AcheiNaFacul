@@ -2339,7 +2339,7 @@
                 };
 
 // original debounce by John Hann
-// http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+// http://unscriptable.com/index.blade.php/2009/03/20/debouncing-javascript-methods/
 
 // this fires every resize
                 Outlayer.prototype.onresize = function() {

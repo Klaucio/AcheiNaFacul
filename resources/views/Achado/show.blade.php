@@ -8,15 +8,10 @@
                 <div class="container" style="background-color:#7ADEDE">
                     <div class="row">
                         <div class="col-md-6">
-                            <img src={{ asset('/img/download.jpg') }}  class="img-responsive img-thumbnail">
+                            <img src={{ asset('/img/download.jpg') }}  class="img-responsive img-thumbnail>
                         </div>
                         <div class="col-md-6">
-                            <h1>A title</h1>
-                            <h3>A subtitle</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-                                dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
-                                nec, pellentesque eu, pretium quis, sem. .</p>
+
                         </div>
                     </div>
                 </div>
@@ -28,30 +23,48 @@
             <div class="p-y-3 section">
                 <div class="container">
                     <div class="row">
-
-                        <div class="col-md-6">
-                            <div class="card m-y-1">
-                                <div class="bg-info card-block text-center text-xs-center">
-                                    <h2 class="card-title">Artigos Achados
-                                        <span class="label label-default label-pill pull-right">17</span>
-                                    </h2>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label for="image" class="col-sm-2 control-label"></label>
+                                <div class="col-sm-10">
+                                    <img src="{{asset('img/'.$artigo->foto)}}" height="180" width="150" class="img-rounded">
                                 </div>
-                                <ul class="list-group list-group-flush">
-                                    @foreach($achados as $key => $value)
-
-                                        <a href="#" class="list-group-item">
-                                            <h4><strong>{{ $value->designacao }}</strong></h4>
-                                            <img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">
-                                            <span class="label label-default label-pill pull-right">2</span>
-                                        </a>
-                                    @endforeach
-
-                                </ul>
-                                {{--<div class="card-block text-center">--}}
-                                {{--<a href="#" class="btn btn-block btn-primary">Subscribe</a>--}}
-                                {{--</div>--}}
                             </div>
+
                         </div>
+                        <div class="col-md-7">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#tab-1">Especificações</a></li>
+                                <li><a data-toggle="tab" href="#tab-2">oooooo</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="tab-1" class="tab-pane fade in active">
+                                    <table class="table table-striped">
+                                        <tbody>
+                                        <tr>
+                                            <th>Nome do artigo</th>
+                                            <td>{{$artigo->designacao}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Categoria</th>
+                                            <td>{{$artigo->categoria_id}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Data</th>
+                                            <td>{{$artigo->data}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Local</th>
+                                            <td>{{$artigo->local}}</td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <a href="{{route('perdidos.create')}}" class='btn  btn-success '> E Meu </a>
+                        </div>
+
 
                     </div>
                 </div>

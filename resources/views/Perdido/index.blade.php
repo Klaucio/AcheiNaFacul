@@ -37,11 +37,11 @@
                                     </h2>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    @foreach($achados as $key => $value)
+                                    @foreach($perdidos as $key => $value)
 
-                                        <a href="#" class="list-group-item">
+                                        <a href="{{url('perdidos',$value->id)}}" class="list-group-item">
                                             <h4><strong>{{ $value->designacao }}</strong></h4>
-                                            <img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">
+                                            <img src="{{asset('img/'.$value->foto)}}" class="img-circle pull-right" style="width:50px">
                                             <span class="label label-default label-pill pull-right">2</span>
                                         </a>
                                     @endforeach

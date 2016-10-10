@@ -8,7 +8,7 @@
                     <div class="container" style="background-color:#7ADEDE">
                         <div class="row">
                             <div class="col-md-6">
-                                <img src={{ asset('/img/download.jpg') }}  class="img-responsive img-thumbnail">
+                                <img src={{ asset('/img/download.jpg') }}  class="img-responsive img-thumbnail>
                             </div>
                             <div class="col-md-6">
                                 <h1>A title</h1>
@@ -38,11 +38,11 @@
                             <ul class="list-group list-group-flush">
                                 @foreach($perdidos as $key => $value)
 
-                                    <li class="list-group-item">
+                                    <a href="{{url('perdidos',$value->id)}}" class="list-group-item">
                                         <h4><strong>{{ $value->designacao }}</strong></h4>
-                                        <img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">
+                                        <img src="{{asset('img/'.$value->foto)}}" class="img-circle pull-right" style="width:50px">
                                         <span class="label label-default label-pill pull-right">2</span>
-                                    </li>
+                                    </a>
                                 @endforeach
 
                             </ul>
@@ -61,11 +61,12 @@
                             <ul class="list-group list-group-flush">
                                 @foreach($achados as $key => $value)
 
-                                    <li class="list-group-item">
+                                    <a href="{{url('achados',$value->id)}}" class="list-group-item">
                                         <h4><strong>{{ $value->designacao }}</strong></h4>
-                                        <img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">
+                                        <img src="{{asset('img/'.$value->foto)}}" class="img-circle pull-right" style="width:50px">
                                         <span class="label label-default label-pill pull-right">2</span>
-                                    </li>
+                                    </a>
+                                    <br>
                                 @endforeach
 
                             </ul>
