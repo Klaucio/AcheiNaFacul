@@ -166,6 +166,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Collective\Remote\RemoteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Watson\Active\ActiveServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -234,6 +235,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'SSH' => Collective\Remote\RemoteFacade::class,
+        'Active' => Watson\Active\Facades\Active::class,
 
 
     ],

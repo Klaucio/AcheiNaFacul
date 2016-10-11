@@ -2,7 +2,7 @@
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,7 +36,11 @@
     <link href="{{ asset('css/nexus.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/w3.css') }}" rel="stylesheet" type="text/css" >
+
     <!-- Google Fonts-->
+
+
     <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
 {{--fim do template--}}
     <!-- Styles -->
@@ -44,7 +48,7 @@
 
     <!-- Scripts -->
     <script>
-        window.Laravel =;; <?php echo json_encode([
+        window.Laravel =<?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
@@ -107,18 +111,7 @@
                                 <img src={{ asset('/img/logo.png') }} alt="Logo" />
                             </a>
                         </div>
-                    {{--<div class="logo">--}}
-                        {{--<div class="col-md-2">--}}
-                            {{--<img src={{ asset('/img/uem.jpg') }} class="img-circle img-fluid">--}}
-                        {{--</div>--}}
-                        {{--<div class="section col-md-10">--}}
-                            {{--<div class="container section col-md-12">--}}
-                                {{--<img src={{ asset('/img/teste1.png') }} class="center-block img-responsive img-thumbnail">--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>                        --}}
-                        {{----}}
-                        {{--<!-- End Logo -->--}}
+
                     </div>
 
                     </div>
@@ -132,64 +125,31 @@
                 <div class="container no-padding border-bottom">
                     <div class="row">
                         <div class="col-md-8 no-padding">
-                            <div class="visible-lg">
+                            <div class="visible-lg" id="sub-header">
                                 <ul id="hornavmenu" class="nav navbar-nav">
-                                    <li>
-                                        <a href="{{url('/home')}}"  class="fa-home active">Página Inicial</a>
+                                    <li  {{ (Request::is('/home') ? 'class=active' : '') }}>
+                                        <a  href="{{url('/home')}}"  class="fa-home">Página Inicial</a>
                                     </li>
 
-                                    <li>
+                                    <li {{ (Request::is('/achados') ? 'class=active' : '') }}}>
                                         <a href="{{url('/achados')}}"> <span class="fa-copy ">Achados</span></a>
-                                        {{--<ul>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-about-us.html">About Us</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-services.html">Services</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-faq.html">F.A.Q.</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-about-me.html">About Me</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-full-width.html">Full Width</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-left-sidebar.html">Left Sidebar</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-right-sidebar.html">Right Sidebar</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-login.html">Login</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-sign-up.html">Sign-Up</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="pages-404.html">404 Error Page</a>--}}
-                                            {{--</li>--}}
-                                        {{--</ul>--}}
+
                                     </li>
-                                    <li>
-                                       <a href="{{url('/perdidos')}}"> <span class="fa-th ">Perdidos</span></a>
-                                        {{--<ul>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="portfolio-2-column.html">2 Column</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="portfolio-3-column.html">3 Column</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="portfolio-4-column.html">4 Column</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li>--}}
-                                                {{--<a href="portfolio-6-column.html">6 Column</a>--}}
-                                            {{--</li>--}}
-                                        {{--</ul>--}}
+
+                                    <li {{ (Request::is('/perdidos') ? 'class=active' : '') }}>
+                                       <a  href="{{url('/perdidos')}}"> <span class="fa-th ">Perdidos</span></a>
+
                                     </li>
+
+                                    {{--<li  {{ Request::segment(1)=='home' ? 'class="active"' : '' }}>--}}
+                                        {{--{{ HTML::link('/home', 'Pagina inicial') }}--}}
+                                    {{--</li>--}}
+                                    {{--<li  {{ Request::segment(1)=='achados' ? 'class="active"' : '' }}>--}}
+                                        {{--{{ HTML::link('/achados', 'Achados') }}--}}
+                                    {{--</li>--}}
+                                    {{--<li  {{ Request::is('perdidos') ? 'class="active"' : '' }}>--}}
+                                        {{--{{ HTML::link('/perdidos', 'Perdidos') }}--}}
+                                    {{--</li>--}}
 
                                 </ul>
                             </div>
@@ -229,5 +189,19 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script>
+    $(function(){
+    // this will get the full URL at the address bar
+    var url = window.location.href;
+
+    // passes on every "a" tag
+    $("#sub-header a").each(function() {
+    // checks if its the same on the address bar
+    if(url == (this.href)) {
+    $(this).closest("li").addClass("active");
+    }
+    });
+    });
+    </script>
 </body>
 </html>

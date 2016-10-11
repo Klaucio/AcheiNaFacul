@@ -1,3 +1,4 @@
+<?php $nav_home = 'active'; ?>
 @extends('layouts.app')
 
 @section('content')
@@ -11,8 +12,8 @@
                                 <img src={{ asset('/img/download.jpg') }}  class="img-responsive img-thumbnail">
                             </div>
                             <div class="col-md-6">
-                                <h1>A title</h1>
-                                <h3>A subtitle</h3>
+                                <h1>Achados e Perdidos</h1>
+                                <h3>Perdeste um objecto? Achaste Um objecto?</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
                                     ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
                                     dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
@@ -39,9 +40,21 @@
                                 @foreach($perdidos as $key => $value)
 
                                     <li class="list-group-item">
-                                        <h4><strong>{{ $value->designacao }}</strong></h4>
-                                        <img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">
-                                        <span class="label label-default label-pill pull-right">2</span>
+                                        <h4><strong>{{ $value->designacao }}
+                                                <span class="label label-default label-pill pull-right">
+                                                <img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">
+                                            </span>
+                                            </strong>
+
+                                        </h4>
+                                        <p>
+                                        <h5><strong>Descrição</strong></h5>
+                                        {{ $value->descricao }}
+                                        <h5><strong>Local Perdido</strong></h5>
+                                        {{ $value->local }}
+                                        <h5><strong>Descricao Local Perdido</strong></h5>
+                                        {{ $value->descricao_local }}
+                                        </p>
                                     </li>
                                 @endforeach
 
@@ -62,9 +75,22 @@
                                 @foreach($achados as $key => $value)
 
                                     <li class="list-group-item">
-                                        <h4><strong>{{ $value->designacao }}</strong></h4>
-                                        <img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">
-                                        <span class="label label-default label-pill pull-right">2</span>
+                                        <h4><strong>{{ $value->designacao }}
+                                                <span class="label label-default label-pill pull-right">
+                                                <img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">
+                                            </span>
+                                            </strong>
+
+                                        </h4>
+                                        <p>
+                                            <h5><strong>Descrição</strong></h5>
+                                            {{ $value->descricao }}
+                                            <h5><strong>Local Achado</strong></h5>
+                                                {{ $value->local }}
+                                        <h5><strong>Descricao Local Achado</strong></h5>
+                                                {{ $value->descricao_local }}
+                                        </p>
+                                        {{--<span class="label label-default label-pill pull-right">2</span>--}}
                                     </li>
                                 @endforeach
 
