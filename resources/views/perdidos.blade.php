@@ -30,7 +30,14 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="card m-y-1">
+                            <div class="card m-y-1">                            
+                                <ul class="nav nav-pills nav-stacked">
+                                   <li>jedan</li>
+                                   <li>dva</li>
+                                   <li>tri</li>
+                                   <li>cetriri</li>
+                                   <li>pet</li>
+                                </ul>
 
                             </div>
                         </div>
