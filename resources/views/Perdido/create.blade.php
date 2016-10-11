@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-<?php $nav_perdidos = 'active'; ?>
-=======
 <?php
 use App\Models\categoria;
 ?>
 
->>>>>>> 5a13515782afb796889f64f84881efbbd78d4f03
 @extends('layouts.app')
 
 @section('content')
@@ -36,48 +32,6 @@ use App\Models\categoria;
             <div class="p-y-3 section">
                 <div class="container">
                     <div class="row">
-<<<<<<< HEAD
-                        <div class="col-md-4">
-                            <div class="card m-y-1">                            
-                                <ul class="nav nav-pills nav-stacked">
-                                   <li>jedan</li>
-                                   <li>dva</li>
-                                   <li>tri</li>
-                                   <li>cetriri</li>
-                                   <li>pet</li>
-                                </ul>
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-8">
-                            <div class="card m-y-1">
-                                <div class="bg-info card-block text-center text-xs-center">
-                                    <h2 class="card-title">Artigos Perdidos
-                                        <span class="label label-default label-pill pull-right">17</span>
-                                    </h2>
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                    @foreach($perdidos as $key => $value)
-
-                                        <li class="list-group-item">
-                                            <h4><strong>{{ $value->designacao }}
-                                                    <span class="label label-default label-pill pull-right">
-                                                <img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">
-                                            </span>
-                                                </strong>
-
-                                            </h4>
-                                            <p>
-                                            <h5><strong>Descrição</strong></h5>
-                                            {{ $value->descricao }}
-                                            <h5><strong>Local Perdido</strong></h5>
-                                            {{ $value->local }}
-                                            <h5><strong>Descricao Local Perdido</strong></h5>
-                                            {{ $value->descricao_local }}
-                                            </p>
-                                        </li>
-=======
                         <div class="w3-container w3-teal">
                             <h2>Reportar Perdido</h2>
                         </div>
@@ -90,7 +44,6 @@ use App\Models\categoria;
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
->>>>>>> 5a13515782afb796889f64f84881efbbd78d4f03
                                     @endforeach
                                 </ul>
                             </div>
@@ -102,13 +55,13 @@ use App\Models\categoria;
                             </div>
                             {{--<img src="images/{{ Session::get('image') }}">--}}
                         @endif
-                        {!! Form::text('titulo','',['class'=>'w3-input w3-animate-input','placeholder'=>'Titulo do anuncio']) !!}
-                        {!! Form::text('designacao','',['class'=>'w3-input w3-animate-input','placeholder'=>'Achado']) !!}
-                        {!! Form::text('descricao','',['class'=>'w3-input w3-animate-input','placeholder'=>'Descricao do artigo']) !!}
+                        {!! Form::text('titulo','',['class'=>'w3-input w3-animate-input','placeholder'=>'Titulo do Anuncio']) !!}
+                        {!! Form::text('designacao','',['class'=>'w3-input w3-animate-input','placeholder'=>'Nome do Artigo']) !!}
+                        {!! Form::text('descricao','',['class'=>'w3-input w3-animate-input','placeholder'=>'Descricao do Artigo']) !!}
                         {{--{!! Form::label('data', 'Data em que perdeu') !!}--}}
                         {!! Form::date('data','',['class'=>'w3-input w3-animate-input']) !!}
                         {!! Form::select('categoria_id',$categorias,null,['class'=>'w3-select'] ) !!}
-                        {!! Form::text('local','',['class'=>'w3-input w3-animate-input','placeholder'=>'Local onde achou']) !!}
+                        {!! Form::text('local','',['class'=>'w3-input w3-animate-input','placeholder'=>'Local onde perdeu']) !!}
                         {!! Form::textarea('descricao_local', '', ['class'=>'w3-input w3-animate-input','placeholder'=>'Descricao do Local']) !!}
                         {!! Form::file('foto','',['class'=>'w3-input w3-animate-input']) !!}
                         {!! Form::hidden('tipo', 'Perdido')  !!}

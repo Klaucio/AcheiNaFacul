@@ -1,5 +1,3 @@
-<?php $nav_achados = 'active'; ?>
-
 @extends('layouts.app')
 
 @section('content')
@@ -31,17 +29,7 @@
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-md-4">
-                            <div class="card m-y-1">
-                                <aside>
-
-                                </aside>
-                                <!--sidebar end-->
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-8">
+                        <div class="col-md-6">
                             <div class="card m-y-1">
                                 <div class="bg-info card-block text-center text-xs-center">
                                     <h2 class="card-title">Artigos Achados
@@ -49,33 +37,13 @@
                                     </h2>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    @foreach($achados as $key => $value)
+                                    @foreach($perdidos as $key => $value)
 
-<<<<<<< HEAD
-                                        <li class="list-group-item">
-                                            <h4><strong>{{ $value->designacao }}
-                                                    <span class="label label-default label-pill pull-right">
-                                                <img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">
-                                            </span>
-                                                </strong>
-
-                                            </h4>
-                                            <p>
-                                            <h5><strong>Descrição</strong></h5>
-                                            {{ $value->descricao }}
-                                            <h5><strong>Local Perdido</strong></h5>
-                                            {{ $value->local }}
-                                            <h5><strong>Descricao Local Perdido</strong></h5>
-                                            {{ $value->descricao_local }}
-                                            </p>
-                                        </li>
-=======
-                                        <a href="#" class="list-group-item">
+                                        <a href="{{url('perdidos',$value->id)}}" class="list-group-item">
                                             <h4><strong>{{ $value->designacao }}</strong></h4>
-                                            <img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">
+                                            <img src="{{asset('img/'.$value->foto)}}" class="img-circle pull-right" style="width:50px">
                                             <span class="label label-default label-pill pull-right">2</span>
                                         </a>
->>>>>>> 5a13515782afb796889f64f84881efbbd78d4f03
                                     @endforeach
 
                                 </ul>

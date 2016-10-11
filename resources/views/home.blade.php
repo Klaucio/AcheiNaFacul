@@ -9,7 +9,7 @@
                     <div class="container" style="background-color:#7ADEDE">
                         <div class="row">
                             <div class="col-md-6">
-                                <img src={{ asset('/img/download.jpg') }}  class="img-responsive img-thumbnail">
+                                <img src={{ asset('/img/download.jpg') }}  class="img-responsive img-thumbnail>
                             </div>
                             <div class="col-md-6">
                                 <h1>Achados e Perdidos</h1>
@@ -39,6 +39,7 @@
                             <ul class="list-group list-group-flush">
                                 @foreach($perdidos as $key => $value)
 
+<<<<<<< HEAD
                                     <li class="list-group-item">
                                         <h4><strong>{{ $value->designacao }}
                                                 <span class="label label-default label-pill pull-right">
@@ -56,6 +57,13 @@
                                         {{ $value->descricao_local }}
                                         </p>
                                     </li>
+=======
+                                    <a href="{{url('perdidos',$value->id)}}" class="list-group-item">
+                                        <h4><strong>{{ $value->designacao }}</strong></h4>
+                                        <img src="{{asset('img/'.$value->foto)}}" class="img-circle pull-right" style="width:50px">
+                                        <span class="label label-default label-pill pull-right">2</span>
+                                    </a>
+>>>>>>> 5a13515782afb796889f64f84881efbbd78d4f03
                                 @endforeach
 
                             </ul>
@@ -74,6 +82,7 @@
                             <ul class="list-group list-group-flush">
                                 @foreach($achados as $key => $value)
 
+<<<<<<< HEAD
                                     <li class="list-group-item">
                                         <h4><strong>{{ $value->designacao }}
                                                 <span class="label label-default label-pill pull-right">
@@ -92,6 +101,14 @@
                                         </p>
                                         {{--<span class="label label-default label-pill pull-right">2</span>--}}
                                     </li>
+=======
+                                    <a href="{{url('achados',$value->id)}}" class="list-group-item">
+                                        <h4><strong>{{ $value->designacao }}</strong></h4>
+                                        <img src="{{asset('img/'.$value->foto)}}" class="img-circle pull-right" style="width:50px">
+                                        <span class="label label-default label-pill pull-right">2</span>
+                                    </a>
+                                    <br>
+>>>>>>> 5a13515782afb796889f64f84881efbbd78d4f03
                                 @endforeach
 
                             </ul>
