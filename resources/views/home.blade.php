@@ -29,32 +29,42 @@
         <div class="p-y-3 section">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+
+
+                    <main class="col-md-6 ">
                         <div class="card m-y-1">
                             <div class="bg-info card-block text-center text-xs-center">
-                                <h2 class="card-title">Artigos Perdidos
+                                <h2 class="card-title perdi">Artigos Perdidos
                                     <span class="label label-default label-pill pull-right">17</span>
                                 </h2>
                             </div>
                             <ul class="list-group list-group-flush">
                                 @foreach($perdidos as $key => $value)
 
-                                    <li class="list-group-item">
-                                        <h4><strong>{{ $value->designacao }}
+                                    <li class="list-group-item perdi contentor">
+                                        <h2><strong>{{ $value->designacao }}
                                                 <span class="label label-default label-pill pull-right">
                                                 <img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">
-                                            </span>
-                                            </strong>
-
-                                        </h4>
+                                                </span></strong></h2>
                                         <p>
-                                        <h5><strong>Descrição</strong></h5>
-                                        {{ $value->descricao }}
                                         <h5><strong>Local Perdido</strong></h5>
                                         {{ $value->local }}
-                                        <h5><strong>Descricao Local Perdido</strong></h5>
-                                        {{ $value->descricao_local }}
                                         </p>
+                                        <div class="button-wrapper">
+                                            <div class="layer"></div>
+                                            <button class="main-button fa fa-info">
+                                                <div class="ripple"></div>
+                                            </button>
+                                        </div>
+
+                                        <div class="layered-content">
+                                            <button class="close-button fa fa-times"></button>
+                                            <div class="content">
+                                                <img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/profile/profile-512_4.jpg" alt="Balapa">
+                                                <p>Crafted by balapa.</p>
+                                                <p>See also my <a href="http://codepen.io/balapa/details/gbQbXR/">other pen</a></p>
+                                            </div>
+                                        </div>
                                     </li>
                                 @endforeach
 
@@ -63,34 +73,41 @@
                                 {{--<a href="#" class="btn btn-block btn-primary">Subscribe</a>--}}
                             {{--</div>--}}
                         </div>
-                    </div>
-                    <div class="col-md-6">
+                    </main>
+                    <main class="col-md-6">
                         <div class="card m-y-1">
                             <div class="bg-info card-block text-center text-xs-center">
-                                <h2 class="card-title">Artigos Achados
+                                <h2 class="card-title achei">Artigos Achados
                                     <span class="label label-default label-pill pull-right">17</span>
                                 </h2>
                             </div>
                             <ul class="list-group list-group-flush">
                                 @foreach($achados as $key => $value)
 
-                                    <li class="list-group-item">
-                                        <h4><strong>{{ $value->designacao }}
+                                    <li class="list-group-item achei contentor">
+                                        <h2><strong>{{ $value->designacao }}
                                                 <span class="label label-default label-pill pull-right">
                                                 <img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">
-                                            </span>
-                                            </strong>
-
-                                        </h4>
+                                                </span></strong></h2>
                                         <p>
-                                            <h5><strong>Descrição</strong></h5>
-                                            {{ $value->descricao }}
-                                            <h5><strong>Local Achado</strong></h5>
-                                                {{ $value->local }}
-                                        <h5><strong>Descricao Local Achado</strong></h5>
-                                                {{ $value->descricao_local }}
+                                        <h5><strong>Local Perdido</strong></h5>
+                                        {{ $value->local }}
                                         </p>
-                                        {{--<span class="label label-default label-pill pull-right">2</span>--}}
+                                        <div class="button-wrapper">
+                                            <div class="layer"></div>
+                                            <button class="main-button fa fa-info">
+                                                <div class="ripple"></div>
+                                            </button>
+                                        </div>
+
+                                        <div class="layered-content">
+                                            <button class="close-button fa fa-times"></button>
+                                            <div class="content">
+                                              <img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/profile/profile-512_4.jpg" alt="Balapa">
+                                                <p>Crafted by balapa.</p>
+                                                <p>See also my <a href="http://codepen.io/balapa/details/gbQbXR/">other pen</a></p>
+                                            </div>
+                                        </div>
                                     </li>
                                 @endforeach
 
@@ -99,7 +116,52 @@
                                 {{--<a href="#" class="btn btn-block btn-primary">Subscribe</a>--}}
                             {{--</div>--}}
                         </div>
-                    </div>
+                    </main>
+                    {{--<div class="col-md-6">--}}
+                        {{--<div class="card m-y-1">--}}
+
+                            {{--<ul class="list-group list-group-flush">--}}
+                                {{--@foreach($achados as $key => $value)--}}
+
+                                    {{--<li class="list-group-item achei">--}}
+                                        {{--<main id="container">--}}
+                                            {{--<h2><strong>{{ $value->designacao }}--}}
+                                                        {{--<span class="label label-default label-pill pull-right">--}}
+                                                {{--<img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">--}}
+                                            {{--</span></strong></h2>--}}
+                                            {{--<p>--}}
+                                            {{--<h5><strong>Descrição</strong></h5>--}}
+                                            {{--{{ $value->descricao }}--}}
+                                            {{--<h5><strong>Local Achado</strong></h5>--}}
+                                            {{--{{ $value->local }}--}}
+                                            {{--<h5><strong>Descricao Local Achado</strong></h5>--}}
+                                            {{--{{ $value->descricao_local }}--}}
+                                            {{--</p>--}}
+                                            {{--<div class="button-wrapper">--}}
+                                                {{--<div class="layer"></div>--}}
+                                                {{--<button class="main-button fa fa-info">--}}
+                                                    {{--<div class="ripple"></div>--}}
+                                                {{--</button>--}}
+                                            {{--</div>--}}
+
+                                            {{--<div class="layered-content">--}}
+                                                {{--<button class="close-button fa fa-times"></button>--}}
+                                                {{--<div class="content">--}}
+                                                    {{--<img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/profile/profile-512_4.jpg" alt="Balapa">--}}
+                                                    {{--<p>Crafted by balapa.</p>--}}
+                                                    {{--<p>See also my <a href="http://codepen.io/balapa/details/gbQbXR/">other pen</a></p>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</main>--}}
+                                    {{--</li>--}}
+                                {{--@endforeach--}}
+
+                            {{--</ul>--}}
+                            {{--<div class="card-block text-center">--}}
+                            {{--<a href="#" class="btn btn-block btn-primary">Subscribe</a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
 
                 </div>
             </div>

@@ -29,7 +29,6 @@
     
     <link href="favicon.ico" rel="shortcut icon">
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
     <!-- Template CSS -->
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet" type="text/css" >
@@ -38,6 +37,7 @@
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/w3.css') }}" rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}" rel="stylesheet">
 
     <!-- Google Fonts-->
 
@@ -184,8 +184,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery.quicksearch.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="/js/jquery.quicksearch.js"></script>
 
 
     <!-- Scripts -->

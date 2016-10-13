@@ -33,10 +33,19 @@
 
                         <div class="col-md-4">
                             <div class="card m-y-1">
-                                <aside>
+                                <div class="w3-container">
+                                  <div class="w3-card-4" >
+                                    <header class="w3-container w3-blue">
+                                      <h1>Categorias</h1>
+                                    </header>
 
-                                </aside>
-                                <!--sidebar end-->
+                                   
+
+                                    <footer class="w3-container w3-blue">
+                                      <h5>Footer</h5>
+                                    </footer>
+                                  </div>
+                                </div>
 
                             </div>
                         </div>
@@ -45,13 +54,13 @@
                             <div class="card m-y-1">
                                 <div class="bg-info card-block text-center text-xs-center">
                                     <h2 class="card-title">Artigos Achados
-                                        <span class="label label-default label-pill pull-right">17</span>
+                                        <span class="label label-default label-pill pull-right"></span>
                                     </h2>
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     @foreach($achados as $key => $value)
 
-                                        <li class="list-group-item">
+                                        <li class="list-group-item bordas_lateral">
                                             <h4><strong>{{ $value->designacao }}
                                                     <span class="label label-default label-pill pull-right">
                                                 <img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">
