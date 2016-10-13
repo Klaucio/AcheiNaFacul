@@ -14,7 +14,7 @@ class CreateLocalTrabalhosTable extends Migration
     public function up()
     {
         Schema::create('local_trabalhos', function (Blueprint $table) {
-            $table->increments('local_id');
+            $table->increments('id');
             $table->string('designacao');
             $table->string('descricao');
             $table->timestamps();

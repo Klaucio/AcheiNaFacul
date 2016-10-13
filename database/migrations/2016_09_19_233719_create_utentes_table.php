@@ -14,8 +14,8 @@ class CreateUtentesTable extends Migration
     public function up()
     {
         Schema::create('utentes', function (Blueprint $table) {
-            $table->bigInteger('nr_utente');
-            $table->primary('nr_utente');
+            $table->bigInteger('id');
+            $table->primary('id');
             $table->string('tipo');
             $table->string('nome');
             $table->string('regime')->nullable();
@@ -23,10 +23,10 @@ class CreateUtentesTable extends Migration
             $table->string('telefone')->unique();
             $table->integer('curso_id')->unsigned()->nullable();
             $table->integer('local_id')->unsigned()->nullable();
-            $table->foreign('curso_id')->references('curso_id')->on('cursos')
+            $table->foreign('curso_id')->references('id')->on('cursos')
                 ->onUpdate('cascade')
                 ->onCascade('set null');
-            $table->foreign('local_id')->references('local_id')->on('local_trabalhos')
+            $table->foreign('local_id')->references('id')->on('local_trabalhos')
                 ->onUpdate('cascade')
                 ->onCascade('set null');
             $table->timestamps();

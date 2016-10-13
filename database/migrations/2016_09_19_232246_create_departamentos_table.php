@@ -14,11 +14,11 @@ class CreateDepartamentosTable extends Migration
     public function up()
     {
         Schema::create('departamentos', function (Blueprint $table) {
-            $table->increments('departamento_id');
+            $table->increments('id');
             $table->string('designacao');
             $table->string('abreviatura');
             $table->integer('faculdade_id')->unsigned();
-            $table->foreign('faculdade_id')->references('faculdade_id')->on('faculdades')
+            $table->foreign('faculdade_id')->references('id')->on('faculdades')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 

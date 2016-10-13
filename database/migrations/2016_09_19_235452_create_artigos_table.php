@@ -14,7 +14,7 @@ class CreateArtigosTable extends Migration
     public function up()
     {
         Schema::create('artigos', function (Blueprint $table) {
-            $table->increments('artigo_id');
+            $table->increments('id');
             $table->string('titulo');
             $table->string('designacao');
             $table->string('descricao');
@@ -32,7 +32,7 @@ class CreateArtigosTable extends Migration
 //                ->onUpdate('cascade')
 //                ->onDelete('cascade');
             $table->integer('categoria_id')->unsigned();
-            $table->foreign('categoria_id')->references('categoria_id')->on('categorias')
+            $table->foreign('categoria_id')->references('id')->on('categorias')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 

@@ -14,10 +14,10 @@ class CreateCursosTable extends Migration
     public function up()
     {
         Schema::create('cursos', function (Blueprint $table) {
-            $table->increments('curso_id');
+            $table->increments('id');
             $table->string('designacao');
             $table->integer('departamento_id')->unsigned();
-            $table->foreign('departamento_id')->references('departamento_id')->on('departamentos')
+            $table->foreign('departamento_id')->references('id')->on('departamentos')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->timestamps();

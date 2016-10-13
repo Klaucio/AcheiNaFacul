@@ -21,7 +21,7 @@ class AchadosController extends Controller
 
         $achados=DB::table('artigos')->where('tipo','=','achado')->get();
 
-        return view('achados')->with('achados',$achados);
+        return view('Achado.index')->with('achados',$achados);
     }
 
     /**
@@ -31,7 +31,7 @@ class AchadosController extends Controller
      */
     public function create()
     {
-        $categorias=categoria::pluck('designacao','categoria_id');
+        $categorias=categoria::pluck('designacao','id');
         $artigo=new artigo();
         return View('Achado.create',['categorias' => $categorias ],['artigo' => $artigo]);
     }

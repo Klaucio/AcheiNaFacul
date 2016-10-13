@@ -14,10 +14,10 @@ class CreateComentariosTable extends Migration
     public function up()
     {
         Schema::create('comentarios', function (Blueprint $table) {
-            $table->increments('comentario_id');
+            $table->increments('id');
             $table->text('comentario');
             $table->integer('artigo_id')->unsigned();
-            $table->foreign('artigo_id')->references('artigo_id')->on('artigos')
+            $table->foreign('artigo_id')->references('id')->on('artigos')
             ->onUpdate('cascade')
             ->onDelete('cascade');
 

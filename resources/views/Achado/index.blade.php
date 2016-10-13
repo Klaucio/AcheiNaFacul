@@ -29,7 +29,20 @@
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
+                            <div class="card m-y-1">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li>jedan</li>
+                                    <li>dva</li>
+                                    <li>tri</li>
+                                    <li>cetriri</li>
+                                    <li>pet</li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-8">
                             <div class="card m-y-1">
                                 <div class="bg-info card-block text-center text-xs-center">
                                     <h2 class="card-title">Artigos Achados
@@ -39,18 +52,34 @@
                                 <ul class="list-group list-group-flush">
                                     @foreach($achados as $key => $value)
 
-                                        <a href="{{url('achados',$value->id)}}" class="list-group-item">
-                                            <h4><strong>{{ $value->designacao }}</strong></h4>
-                                            <img src="{{asset('img/'.$value->foto)}}" class="img-circle pull-right" style="width:50px">
-                                            <span class="label label-default label-pill pull-right">2</span>
-                                        </a>
-                                        <br>
+                                        <li class="list-group-item achei contentor">
+                                            <h2><strong>{{ $value->designacao }}
+                                                    <span class="label label-default label-pill pull-right">
+                                                <img src="{{asset('img/'.$value->foto)}}" class="img-circle pull-right" style="width:50px">
+                                                </span></strong></h2>
+                                            <p>
+                                            <h5><strong>Local Achado</strong></h5>
+                                            {{ $value->local }}
+                                            </p>
+                                            <div class="button-wrapper">
+                                                <div class="layer"></div>
+                                                <button class="main-button fa fa-info">
+                                                    <div class="ripple"></div>
+                                                </button>
+                                            </div>
+
+                                            <div class="layered-content">
+                                                <button class="close-button fa fa-times"></button>
+                                                <div class="content">
+                                                    <img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/profile/profile-512_4.jpg" alt="Balapa">
+                                                    <p>Crafted by balapa.</p>
+                                                    <p>See also my <a href="http://codepen.io/balapa/details/gbQbXR/">other pen</a></p>
+                                                </div>
+                                            </div>
+                                        </li>
                                     @endforeach
 
                                 </ul>
-                                {{--<div class="card-block text-center">--}}
-                                {{--<a href="#" class="btn btn-block btn-primary">Subscribe</a>--}}
-                                {{--</div>--}}
                             </div>
                         </div>
 

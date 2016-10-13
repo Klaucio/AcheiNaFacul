@@ -32,7 +32,7 @@ class PerdidosController extends Controller
      */
     public function create()
     {
-        $categorias=categoria::pluck('designacao','categoria_id');
+        $categorias=categoria::pluck('designacao','id');
         $artigo=new artigo();
         return View('Perdido.create',['categorias' => $categorias ],['artigo' => $artigo]);
     }
@@ -57,7 +57,7 @@ class PerdidosController extends Controller
             "designacao"=> $request->get("designacao"),
             "descricao"=> $request->get("descricao"),
             "data"=> $request->get("data"),
-            "categoria_id"=>$request->get("categoria_id"),
+            "categoria_id"=>1,//>$request->get("categoria_id"),
             "local"=> $request->get("local"),
             "descricao_local"=> $request->get("descricao_local"),
             "tipo"=>$request->get("tipo"),

@@ -8,7 +8,7 @@
                 <div class="container" style="background-color:#7ADEDE">
                     <div class="row">
                         <div class="col-md-6">
-                            <img src={{ asset('/img/download.jpg') }}  class="img-responsive img-thumbnail">
+                            <img src="{{ asset('/img/download.jpg') }}"  class="img-responsive img-thumbnail">
                         </div>
                         <div class="col-md-6">
                             <h1>A title</h1>
@@ -29,21 +29,54 @@
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
+                            <div class="card m-y-1">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li>jedan</li>
+                                    <li>dva</li>
+                                    <li>tri</li>
+                                    <li>cetriri</li>
+                                    <li>pet</li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-8">
                             <div class="card m-y-1">
                                 <div class="bg-info card-block text-center text-xs-center">
-                                    <h2 class="card-title">Artigos Achados
+                                    <h2 class="card-title">Artigos Perdidos
                                         <span class="label label-default label-pill pull-right">17</span>
                                     </h2>
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     @foreach($perdidos as $key => $value)
 
-                                        <a href="{{url('perdidos',$value->id)}}" class="list-group-item">
-                                            <h4><strong>{{ $value->designacao }}</strong></h4>
-                                            <img src="{{asset('img/'.$value->foto)}}" class="img-circle pull-right" style="width:50px">
-                                            <span class="label label-default label-pill pull-right">2</span>
-                                        </a>
+                                        <li class="list-group-item perdi contentor">
+                                            <h2><strong>{{ $value->designacao }}
+                                                    <span class="label label-default label-pill pull-right">
+                                                 <img src="{{asset('img/'.$value->foto)}}" class="img-circle pull-right" style="width:50px">
+                                                </span></strong></h2>
+                                            <p>
+                                            <h5><strong>Local Perdido</strong></h5>
+                                            {{ $value->local }}
+                                            </p>
+                                            <div class="button-wrapper">
+                                                <div class="layer"></div>
+                                                <button class="main-button fa fa-info">
+                                                    <div class="ripple"></div>
+                                                </button>
+                                            </div>
+
+                                            <div class="layered-content">
+                                                <button class="close-button fa fa-times"></button>
+                                                <div class="content">
+                                                    <img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/profile/profile-512_4.jpg" alt="Balapa">
+                                                    <p>Crafted by balapa.</p>
+                                                    <p>See also my <a href="http://codepen.io/balapa/details/gbQbXR/">other pen</a></p>
+                                                </div>
+                                            </div>
+                                        </li>
                                     @endforeach
 
                                 </ul>
