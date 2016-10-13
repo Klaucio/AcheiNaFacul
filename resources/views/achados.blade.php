@@ -50,8 +50,6 @@
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     @foreach($achados as $key => $value)
-
-<<<<<<< HEAD
                                         <li class="list-group-item">
                                             <h4><strong>{{ $value->designacao }}
                                                     <span class="label label-default label-pill pull-right">
@@ -69,13 +67,11 @@
                                             {{ $value->descricao_local }}
                                             </p>
                                         </li>
-=======
                                         <a href="#" class="list-group-item">
                                             <h4><strong>{{ $value->designacao }}</strong></h4>
                                             <img src="http://v4.pingendo.com/assets/photos/apple/photo-1.jpg" class="img-circle pull-right" style="width:50px">
                                             <span class="label label-default label-pill pull-right">2</span>
                                         </a>
->>>>>>> 5a13515782afb796889f64f84881efbbd78d4f03
                                     @endforeach
 
                                 </ul>

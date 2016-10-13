@@ -52,13 +52,9 @@
 
     <!-- Scripts -->
     <script>
-<<<<<<< HEAD
-        window.Laravel =<?php echo json_encode([
-=======
-        window.Laravel = <?php echo json_encode([
->>>>>>> 5a13515782afb796889f64f84881efbbd78d4f03
+        window.Laravel ="<?php echo json_encode([
             'csrfToken' => csrf_token(),
-        ]); ?>
+        ]); ?>"
     </script>
 </head>
 <body>
@@ -141,14 +137,11 @@
 
                                     <li {{ (Request::is('/achados') ? 'class=active' : '') }}}>
                                         <a href="{{url('/achados')}}"> <span class="fa-copy ">Achados</span></a>
-<<<<<<< HEAD
-
                                     </li>
 
                                     <li {{ (Request::is('/perdidos') ? 'class=active' : '') }}>
                                        <a  href="{{url('/perdidos')}}"> <span class="fa-th ">Perdidos</span></a>
 
-=======
                                         <ul class="dropdown-menu" role="menu">
                                             <li>
                                                 <a href="{{ route('achados.index') }}"
@@ -178,7 +171,6 @@
 
                                             </li>
                                         </ul>
->>>>>>> 5a13515782afb796889f64f84881efbbd78d4f03
                                     </li>
 
                                     {{--<li  {{ Request::segment(1)=='home' ? 'class="active"' : '' }}>--}}
