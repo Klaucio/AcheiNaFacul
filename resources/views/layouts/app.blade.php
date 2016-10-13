@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/w3.css') }}" rel="stylesheet" type="text/css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     {{--Css do template--}}
@@ -31,7 +34,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
     <!-- Template CSS -->
-    <link href="{{ asset('css/animate.css') }}" rel="stylesheet" type="text/css" >
+    {{--<link href="{{ asset('css/animate.css') }}" rel="stylesheet" type="text/css" >--}}
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/nexus.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet" type="text/css" >
@@ -49,7 +52,11 @@
 
     <!-- Scripts -->
     <script>
+<<<<<<< HEAD
         window.Laravel =<?php echo json_encode([
+=======
+        window.Laravel = <?php echo json_encode([
+>>>>>>> 5a13515782afb796889f64f84881efbbd78d4f03
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
@@ -134,12 +141,44 @@
 
                                     <li {{ (Request::is('/achados') ? 'class=active' : '') }}}>
                                         <a href="{{url('/achados')}}"> <span class="fa-copy ">Achados</span></a>
+<<<<<<< HEAD
 
                                     </li>
 
                                     <li {{ (Request::is('/perdidos') ? 'class=active' : '') }}>
                                        <a  href="{{url('/perdidos')}}"> <span class="fa-th ">Perdidos</span></a>
 
+=======
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a href="{{ route('achados.index') }}"
+                                                        >
+                                                    Listar Achados
+                                                </a>
+                                                <a href="{{ route('achados.create') }}"
+                                                        >
+                                                   Reportar Achado
+                                                </a>
+
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                       <a href="{{ URL::to('/perdidos') }}"> <span class="fa-th ">Perdidos</span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a href="{{ route('perdidos.index') }}"
+                                                        >
+                                                   Listar Perdidos
+                                                </a>
+                                                <a href="{{ route('perdidos.create') }}"
+                                                        >
+                                                   Reportar Perdido
+                                                </a>
+
+                                            </li>
+                                        </ul>
+>>>>>>> 5a13515782afb796889f64f84881efbbd78d4f03
                                     </li>
 
                                     {{--<li  {{ Request::segment(1)=='home' ? 'class="active"' : '' }}>--}}
