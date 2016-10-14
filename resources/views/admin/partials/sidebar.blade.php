@@ -29,6 +29,17 @@
                         <span class="title">{{ trans('quickadmin::admin.partials-sidebar-user-actions') }}</span>
                     </a>
                 </li>
+{{--Modificacoes--}}
+
+                <li @if(Request::path() == 'faculdades') class="active" @endif>
+                    <a href="{{ url('roles') }}">
+                        <i class="fa fa-gavel"></i>
+                        <span class="title">Faculdades</span>
+                    </a>
+                </li>
+
+
+
             @endif
             @foreach($menus as $menu)
                 @if($menu->menu_type != 2 && is_null($menu->parent_id))
