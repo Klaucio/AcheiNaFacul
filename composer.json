@@ -51,11 +51,6 @@
         },
         "config": {
             "preferred-install": "dist"
-        },
-        "autoload": {
-         "files": [
-                "app/Helpers/functions.php"
-            ]
-    }
+        }
 
 }
