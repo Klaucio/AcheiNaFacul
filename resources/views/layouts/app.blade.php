@@ -135,12 +135,9 @@
                                         <a  href="{{url('/home')}}"  class="fa-home">Página Inicial</a>
                                     </li>
 
+
                                     <li {{ (Request::is('/achados') ? 'class=active' : '') }}}>
                                         <a href="{{url('/achados')}}"> <span class="fa-copy ">Achados</span></a>
-                                    </li>
-
-                                    <li {{ (Request::is('/perdidos') ? 'class=active' : '') }}>
-                                       <a  href="{{url('/perdidos')}}"> <span class="fa-th ">Perdidos</span></a>
 
                                         <ul class="dropdown-menu" role="menu">
                                             <li>
@@ -150,7 +147,7 @@
                                                 </a>
                                                 <a href="{{ route('achados.create') }}"
                                                         >
-                                                   Reportar Achado
+                                                    Reportar Achado
                                                 </a>
 
                                             </li>

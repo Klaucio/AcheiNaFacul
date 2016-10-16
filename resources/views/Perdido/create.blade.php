@@ -12,7 +12,7 @@ use App\Models\categoria;
                 <div class="container" style="background-color:#7ADEDE">
                     <div class="row">
                         <div class="col-md-6">
-                            <img src={{ asset('/img/download.jpg') }}  class="img-responsive img-thumbnail>
+                            <img src="{{ asset('/img/download.jpg') }}"  class="img-responsive img-thumbnail">
                         </div>
                         <div class="col-md-6">
                             <h1>A title</h1>
@@ -56,11 +56,11 @@ use App\Models\categoria;
                             {{--<img src="images/{{ Session::get('image') }}">--}}
                         @endif
                         {!! Form::text('titulo','',['class'=>'w3-input w3-animate-input','placeholder'=>'Titulo do Anuncio']) !!}
-                        {!! Form::text('designacao','',['class'=>'w3-input w3-animate-input','placeholder'=>'Nome do Artigo']) !!}
+                        {!! Form::text('designacao',isset($artigo->designacao)? $artigo->designacao: '',isset($artigo->designacao)?['class'=>'w3-input w3-animate-input','placeholder'=>'Nome do Artigo','disabled']:['class'=>'w3-input w3-animate-input','placeholder'=>'Nome do Artigo']) !!}
                         {!! Form::text('descricao','',['class'=>'w3-input w3-animate-input','placeholder'=>'Descricao do Artigo']) !!}
                         {{--{!! Form::label('data', 'Data em que perdeu') !!}--}}
                         {!! Form::date('data','',['class'=>'w3-input w3-animate-input']) !!}
-                        {!! Form::select('categoria_id',$categorias,null,['class'=>'w3-select'] ) !!}
+                        {!! Form::select('id',$categorias,isset($artigo->categoria->designacao)? $artigo->categoria->designacao :null,isset($artigo->designacao)?['class'=>'w3-select','disabled']:['class'=>'w3-select'] ) !!}
                         {!! Form::text('local','',['class'=>'w3-input w3-animate-input','placeholder'=>'Local onde perdeu']) !!}
                         {!! Form::textarea('descricao_local', '', ['class'=>'w3-input w3-animate-input','placeholder'=>'Descricao do Local']) !!}
                         {!! Form::file('foto','',['class'=>'w3-input w3-animate-input']) !!}

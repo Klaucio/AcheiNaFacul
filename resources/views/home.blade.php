@@ -41,7 +41,7 @@
                                 <ul class="list-group list-group-flush">
                                     @foreach($perdidos as $key => $value)
 
-                                        <li class="list-group-item perdi contentor">
+                                        <a href="{{url('perdidos',$value->id)}}" class="list-group-item perdi contentor">
                                             <h2><strong>{{ $value->designacao }}
                                                     <span class="label label-default label-pill pull-right">
                                                  <img src="{{asset('img/'.$value->foto)}}" class="img-circle pull-right" style="width:50px">
@@ -65,7 +65,7 @@
                                                     <p>See also my <a href="http://codepen.io/balapa/details/gbQbXR/">other pen</a></p>
                                                 </div>
                                             </div>
-                                        </li>
+                                        </a>
                                     @endforeach
 
                                 </ul>
@@ -75,13 +75,13 @@
                             <div class="card m-y-1">
                                 <div class="bg-info card-block text-center text-xs-center">
                                     <h2 class="card-title achei">Artigos Achados
-                                        <span class="label label-default label-pill pull-right">17</span>
+                                        <span class="label label-default label-pill pull-right">{{count($achados)}}</span>
                                     </h2>
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     @foreach($achados as $key => $value)
 
-                                        <li class="list-group-item achei contentor">
+                                        <a href="{{url('achados',$value->id)}}" class="list-group-item achei contentor">
                                             <h2><strong>{{ $value->designacao }}
                                                     <span class="label label-default label-pill pull-right">
                                                 <img src="{{asset('img/'.$value->foto)}}" class="img-circle pull-right" style="width:50px">
@@ -105,7 +105,7 @@
                                                     <p>See also my <a href="http://codepen.io/balapa/details/gbQbXR/">other pen</a></p>
                                                 </div>
                                             </div>
-                                        </li>
+                                        </a>
                                     @endforeach
 
                                 </ul>

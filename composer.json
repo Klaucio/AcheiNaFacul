@@ -10,13 +10,10 @@
         "laravelcollective/html": "^5.3",
         "intervention/image": "^2.3",
         "laraveldaily/quickadmin": "^2.0",
-<<<<<<< HEAD
-        "watson/active": "^2.0"
-=======
-        "laravelcollective/remote": "^5.3"
->>>>>>> 5a13515782afb796889f64f84881efbbd78d4f03
-    },
-    "require-dev": {
+        "watson/active": "^2.0",
+         "laravelcollective/remote": "^5.3"
+        },
+     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~5.0",
@@ -37,33 +34,28 @@
         ]
     },
     "scripts": {
-        "post-root-package-install": [
-            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "php artisan key:generate"
-        ],
-        "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan optimize"
-        ],
-        "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan optimize"
-        ]
-    },
-    "config": {
-        "preferred-install": "dist"
-    },
-    "autoload": {
-//        "classmap": {...},
-//        "psr-4": {...},
-        "files": [
-            "app/Helpers/functions.php"
-        ]
-    },
-
-
-
+            "post-root-package-install": [
+                "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+            ],
+            "post-create-project-cmd": [
+                "php artisan key:generate"
+            ],
+            "post-install-cmd": [
+                "Illuminate\\Foundation\\ComposerScripts::postInstall",
+                "php artisan optimize"
+            ],
+            "post-update-cmd": [
+                "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+                "php artisan optimize"
+            ]
+        },
+        "config": {
+            "preferred-install": "dist"
+        },
+        "autoload": {
+         "files": [
+                "app/Helpers/functions.php"
+            ]
+    }
 
 }

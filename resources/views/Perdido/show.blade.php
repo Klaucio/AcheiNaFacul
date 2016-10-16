@@ -47,7 +47,7 @@
                                         </tr>
                                         <tr>
                                             <th>Categoria</th>
-                                            <td>{{$artigo->categoria_id}}</td>
+                                            <td>{{$artigo->categoria->designacao}}</td>
                                         </tr>
                                         <tr>
                                             <th>Data</th>
@@ -62,7 +62,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <a href="{{route('achados.create',$artigo->id)}}" class='btn  btn-success '> Achei </a>
+                            <a href="{{route('achados.edit',$artigo->id)}}" class='btn  btn-success '> Achei </a>
                         </div>
 
 

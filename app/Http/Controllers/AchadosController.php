@@ -91,7 +91,9 @@ class AchadosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $artigo=artigo::find($id);
+        $categorias=categoria::pluck('designacao','id');
+        return View('Achado.create',['categorias' => $categorias ],['artigo' => $artigo]);
     }
 
     /**

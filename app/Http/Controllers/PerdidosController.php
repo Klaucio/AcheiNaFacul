@@ -92,7 +92,9 @@ class PerdidosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $artigo=artigo::find($id);
+        $categorias=categoria::pluck('designacao','id');
+        return View('Perdido.create',['categorias' => $categorias ],['artigo' => $artigo]);
     }
 
     /**

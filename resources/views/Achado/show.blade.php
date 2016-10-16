@@ -47,7 +47,7 @@
                                         </tr>
                                         <tr>
                                             <th>Categoria</th>
-                                            <td>{{$artigo->categoria_id}}</td>
+                                            <td>{{$artigo->categoria->designacao}}</td>
                                         </tr>
                                         <tr>
                                             <th>Data</th>
@@ -62,8 +62,9 @@
                                     </table>
                                 </div>
                             </div>
-                            <a href="{{route('perdidos.create')}}" class='btn  btn-success '> E Meu </a>
+                            <a href="{{route('perdidos.edit',$artigo->id)}}" class='btn  btn-success '> E Meu </a>
                         </div>
+
 
 
                     </div>
