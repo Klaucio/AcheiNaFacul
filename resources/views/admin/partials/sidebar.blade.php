@@ -50,6 +50,20 @@
                     </a>
                 </li>
 
+                <li @if(Request::path() == 'categorias') class="active" @endif>
+                    <a href="{{ url('categorias') }}">
+                        <i class="fa fa-gavel"></i>
+                        <span class="title">Categorias</span>
+                    </a>
+                </li>
+
+                <li @if(Request::path() == 'estados') class="active" @endif>
+                    <a href="{{ url('estados') }}">
+                        <i class="fa fa-gavel"></i>
+                        <span class="title">Estados</span>
+                    </a>
+                </li>
+
 
 
             @endif

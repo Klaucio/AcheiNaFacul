@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <p>{!! link_to_route('faculdades.create', trans('quickadmin::admin.faculdades-index-add_new'), [], ['class' => 'btn btn-success']) !!}</p>
+    <p>{!! link_to_route('estados.create', trans('quickadmin::admin.faculdades-index-add_new'), [], ['class' => 'btn btn-success']) !!}</p>
 
-    @if($faculdades->count() > 0)
+    @if($estados->count() > 0)
         <div class="portlet box green">
             <div class="portlet-title">
                 <div class="caption">{{ trans('quickadmin::admin.roles-index-roles_list') }}</div>
@@ -19,14 +19,13 @@
                     </thead>
 
                     <tbody>
-                        @foreach ($faculdades as $faculdade)
+                        @foreach ($estados as $estado)
                             <tr>
-                                <td>{{ $faculdade->designacao }}</td>
+                                <td>{{ $estado->designacao }}</td>
                                 <td>
-                                    {!! link_to_route('faculdades.edit', trans('quickadmin::admin.roles-index-edit'), [$faculdade->id], ['class' => 'fa fa-pencil-square-o btn btn-md btn-info']) !!}
-                                    {!! link_to_route('newDept', 'Departamento', [$faculdade->id], ['class' => 'fa fa-plus-circle btn btn-md btn-info']) !!}
-                                    {!! link_to_route('faculdades.show', '', [$faculdade->id], ['class' => 'fa fa-eye btn btn-md btn-info']) !!}
-                                    {!! Form::open(['style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => 'return confirm(\'' . trans('quickadmin::admin.roles-index-are_you_sure') . '\');',  'route' => ['faculdades.destroy', $faculdade->id]]) !!}
+                                    {!! link_to_route('estados.edit', trans('quickadmin::admin.roles-index-edit'), [$estado->id], ['class' => 'fa fa-pencil-square-o btn btn-md btn-info']) !!}
+                                    {!! link_to_route('estados.show', '', [$estado->id], ['class' => 'fa fa-eye btn btn-md btn-info']) !!}
+                                    {!! Form::open(['style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => 'return confirm(\'' . trans('quickadmin::admin.roles-index-are_you_sure') . '\');',  'route' => ['estados.destroy', $estado->id]]) !!}
                                     {!! Form::submit(trans('quickadmin:departamentos:admin.roles-index-delete'), ['class' => 'fa fa-trash-o btn btn-md btn-danger']) !!}
                                     {!! Form::close() !!}
 
