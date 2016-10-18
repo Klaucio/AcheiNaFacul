@@ -31,13 +31,45 @@
 
                         <div class="col-md-4">
                             <div class="card m-y-1">
-                                <ul class="nav nav-pills nav-stacked">
-                                    <li>jedan</li>
-                                    <li>dva</li>
-                                    <li>tri</li>
-                                    <li>cetriri</li>
-                                    <li>pet</li>
-                                </ul>
+                                <ul class="list-group sidebar-nav" id="sidebar-nav">
+                                    <!-- Typography -->
+                                    <li class="list-group-item list-toggle">
+                                        <a data-toggle="collapse" data-parent="#sidebar-nav" href="#collapse-typography">Typography</a>
+                                        <ul id="collapse-typography" class="collapse">
+                                            <li>
+                                                <a href="features-typo-basic.html">
+                                                    <i class="fa fa-sort-alpha-asc"></i>Basic Typography</a>
+                                            </li>
+                                            <li>
+                                                <a href="features-typo-blockquotes.html">
+                                                    <i class="fa fa-magic"></i>Blockquotes</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- End Typography -->
+                                    <!-- Components -->
+                                    <li class="list-group-item list-toggle">
+                                        <a class="accordion-toggle" href="#collapse-components" data-toggle="collapse">Components</a>
+                                        <ul id="collapse-components" class="collapse">
+                                            <li>
+                                                <span class="badge">New</span>
+                                                <a href="features-labels.html">
+                                                    <i class="fa fa-tags"></i>Labels</a>
+                                            </li>
+                                            <li>
+                                                <span class="badge">New</span>
+                                                <a href="features-progress-bars.html">
+                                                    <i class="fa fa-align-left"></i>Progress Bars</a>
+                                            </li>
+                                            <li>
+                                                <a href="features-panels.html">
+                                                    <i class="fa fa-columns"></i>Panels</a>
+                                            </li>
+                                            <li>
+                                                <a href="features-pagination.html">
+                                                    <i class="fa fa-arrows-h"></i>Pagination</a>
+                                            </li>
+                                        </ul>
 
                             </div>
                         </div>

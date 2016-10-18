@@ -32,9 +32,21 @@
 {{--Modificacoes--}}
 
                 <li @if(Request::path() == 'faculdades') class="active" @endif>
-                    <a href="{{ url('roles') }}">
+                    <a href="{{ url('faculdades') }}">
                         <i class="fa fa-gavel"></i>
                         <span class="title">Faculdades</span>
+                    </a>
+                </li>
+                <li @if(Request::path() == 'departamentos') class="active" @endif>
+                    <a href="{{ url('departamentos') }}">
+                        <i class="fa fa-gavel"></i>
+                        <span class="title">Departamentos</span>
+                    </a>
+                </li>
+                <li @if(Request::path() == 'cursos') class="active" @endif>
+                    <a href="{{ url('cursos') }}">
+                        <i class="fa fa-gavel"></i>
+                        <span class="title">Cursos</span>
                     </a>
                 </li>
 

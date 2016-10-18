@@ -18,3 +18,18 @@ Route::resource('achados', 'AchadosController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('departamentos/{id} ',function ($id){
+    return 'teste '.$id;
+//            $faculdade = \App\Models\faculdade::findOrFail($id);
+//            return view('admin.departamentos.addDep', compact('faculdade'));
+});
+Route::get('departamentos/{id}/createWithId', ['as' => 'newDept', function ($id) {
+    //
+    $faculdade = \App\Models\faculdade::findOrFail($id);
+    return view('admin.departamentos.createWithId', compact('faculdade'));
+}]);
+Route::get('cursos/{id}/createWithId', ['as' => 'newCourse', function ($id) {
+    //
+    $departamento = \App\Models\departamento::findOrFail($id);
+    return view('admin.cursos.createWithId', compact('departamento'));
+}]);

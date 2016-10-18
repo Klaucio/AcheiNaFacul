@@ -72,7 +72,7 @@
 
                                 @if (Auth::guest())
                                     <div class="top-right links">
-                                        <a href="{{ url('/login') }}"><i class="fa fa-home fa-fw"></i>Login</a>
+                                        <a href="{{ url('/login') }}"><i class="fa fa-user fa-fw"></i>Login</a>
                                         <a href="{{ url('/register') }}"><i class="fa fa-pencil fa-fw">Register</i></a>
                                     </div>
                                     <div class="col-sm-6 text-right padding-vert-5">
