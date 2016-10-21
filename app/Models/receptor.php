@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class receptor extends Model
 {
     //
-    protected $fillable=['data_levantamento','utente_id'];
+    protected $fillable=['data_levantamento','id'];
     public $timestamps=false;
 
     public function utente(){

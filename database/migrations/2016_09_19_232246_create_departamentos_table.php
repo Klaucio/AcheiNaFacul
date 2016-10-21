@@ -16,7 +16,7 @@ class CreateDepartamentosTable extends Migration
         Schema::create('departamentos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('designacao');
-            $table->string('abreviatura');
+            $table->string('abreviatura')->nullable();
             $table->integer('faculdade_id')->unsigned();
             $table->foreign('faculdade_id')->references('id')->on('faculdades')
                 ->onUpdate('cascade')

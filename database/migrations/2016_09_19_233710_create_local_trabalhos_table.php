@@ -17,7 +17,7 @@ class CreateLocalTrabalhosTable extends Migration
             $table->increments('id');
             $table->string('designacao');
             $table->string('descricao');
-            $table->timestamps();
+//            $table->timestamps();
         });
     }
 

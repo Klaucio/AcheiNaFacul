@@ -14,6 +14,7 @@
 Route::resource('/', 'HomeController');
 Route::resource('perdidos', 'PerdidosController');
 Route::resource('achados', 'AchadosController');
+Route::resource('utentes', 'UtentesController');
 
 Auth::routes();
 

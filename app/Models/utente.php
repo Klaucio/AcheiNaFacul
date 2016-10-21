@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class utente extends Model
 {
     //
-    protected $fillable=['nr_utente','tipo','nome','regime','sala','telefone','curso_id','local_id'];
+    protected $fillable=['id','tipo','nome','regime','sala','telefone','curso_id','local_id'];
     public $timestamps=false;
 
     public function curso(){

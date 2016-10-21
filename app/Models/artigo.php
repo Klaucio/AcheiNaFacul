@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class artigo extends Model
 {
     //
-    protected $fillable=['titulo','tipo','designacao','data','descricao','foto','local',
+    protected $fillable=['tipo','designacao','data','descricao','foto','local',
                         'descricao_local','user_id','categoria_id','receptor_id'];
     public $timestamps=false;
 

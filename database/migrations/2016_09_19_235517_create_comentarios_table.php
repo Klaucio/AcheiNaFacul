@@ -17,10 +17,13 @@ class CreateComentariosTable extends Migration
             $table->increments('id');
             $table->text('comentario');
             $table->integer('artigo_id')->unsigned();
+            $table->bigInteger('user_id');
             $table->foreign('artigo_id')->references('id')->on('artigos')
             ->onUpdate('cascade')
             ->onDelete('cascade');
-
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

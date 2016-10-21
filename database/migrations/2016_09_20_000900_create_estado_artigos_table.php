@@ -14,7 +14,15 @@ class CreateEstadoArtigosTable extends Migration
     public function up()
     {
         Schema::create('estado_artigos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('artigo_id')->unsigned();
+            $table->foreign('artigo_id')->references('id')->on('artigos')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->integer('estado_id')->unsigned();
+            $table->foreign('estado_id')->references('id')->on('estados')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->primary(['artigo_id','estado_id']);
             $table->timestamps();
         });
     }

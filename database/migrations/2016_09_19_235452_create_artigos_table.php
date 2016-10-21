@@ -15,7 +15,6 @@ class CreateArtigosTable extends Migration
     {
         Schema::create('artigos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titulo');
             $table->string('designacao');
             $table->string('descricao');
             $table->date('data');
@@ -23,18 +22,19 @@ class CreateArtigosTable extends Migration
             $table->string('tipo');
             $table->string('local');
             $table->string('descricao_local');
-//            $table->bigInteger('user_id_fk')->unsigned();
-//            $table->foreign('user_id_fk')->references('id')->on('users')
-//                ->onUpdate('cascade')
-//                ->onDelete('cascade');
-//            $table->bigInteger('receptor_id_fk')->unsigned();
-//            $table->foreign('receptor_id_fk')->references('receptor_id')->on('receptors')
-//                ->onUpdate('cascade')
-//                ->onDelete('cascade');
             $table->integer('categoria_id')->unsigned();
+            $table->bigInteger('user_id');
+            $table->bigInteger('receptor_id')->nullable();
+            $table->foreign('receptor_id')->references('id')->on('receptors')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->foreign('categoria_id')->references('id')->on('categorias')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->timestamps();
 
 
 

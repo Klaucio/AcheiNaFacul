@@ -13,7 +13,7 @@ class UpdateUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('role_id')->nullable()->after('id')->references('id')->on('roles');
+            $table->integer('role_id')->unsigned()->nullable()->after('id')->index()->references('id')->on('roles');
         });
     }
 

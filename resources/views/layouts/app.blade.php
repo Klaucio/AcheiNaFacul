@@ -12,9 +12,19 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="/js/jquery-3.1.0.js"></script>
+    <script src="/js/mdb.min.js"></script>
+    <script src="/js/tether.min.js"></script>
+    <script src="/js/materialize.min.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all"
+          rel="stylesheet"
+          type="text/css"/>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
@@ -37,14 +47,14 @@
     {{--<link href="{{ asset('css/animate.css') }}" rel="stylesheet" type="text/css" >--}}
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/nexus.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/materialize.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/mdb.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css" >
-    <link href="{{ asset('css/w3.css') }}" rel="stylesheet" type="text/css" >
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}" rel="stylesheet">
 
     <!-- Google Fonts-->
-
-
     <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
 {{--fim do template--}}
     <!-- Styles -->
@@ -72,8 +82,15 @@
 
                                 @if (Auth::guest())
                                     <div class="top-right links">
-                                        <a href="{{ url('/login') }}"><i class="fa fa-user fa-fw"></i>Login</a>
-                                        <a href="{{ url('/register') }}"><i class="fa fa-pencil fa-fw">Register</i></a>
+                                        <div>
+                                            <a href="{{ url('/login') }}"><i class="fa fa-user fa-fw"></i>Login</a>
+                                        </div>
+                                        <div>
+                                            <a href="{{ url('/register') }}"><i class="fa fa-pencil fa-fw">Register</i></a>
+                                        </div>
+                                        <div>
+                                            <a href="{{ url('/utentes/create') }}"><i class="fa fa-edit fa-fw"></i>Utente</a>
+                                        </div>
                                     </div>
                                     <div class="col-sm-6 text-right padding-vert-5">
                                         <strong>Email:</strong>&nbsp;achei.fakul@uem.ac.mz
@@ -207,14 +224,22 @@
 
         @yield('content')
     </div>
+    <script src="/js/custom.js"></script>
     <script src="/js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 
     <script type="text/javascript" src="/js/jquery-3.1.0.js"></script>
     <script type="text/javascript" src="/js/jquery.quicksearch.js"></script>
 
+
+    <script langauage="javascript">
+        function showMessage(value){
+            document.getElementById("message").innerHTML = value;
+        }
+    </script>
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
