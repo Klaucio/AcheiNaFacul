@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\curso;
+use App\Models\local_trabalho;
 use App\Models\utente;
 use Illuminate\Http\Request;
 
@@ -48,10 +49,43 @@ class UtentesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->utentes->create($request->only('id','tipo','nome','regime','sala','telefone','curso_id','local_id'));
+        $this->utentes->id=$request->input('id');
+        $this->utentes->tipo=$request->input('tipo');
+        $this->utentes->nome=$request->input('nome');
+        $this->utentes->telefone=$request->input('telefone');
 
-        return redirect()->route('auth.createUser')->withMessage(trans('quickadmin::admin.roles-controller-successfully_created'))->with(compact('utentes'));
+        if ($request->input('tipo').equalToIgnoringCase('Funcionário') and $request->has('designacao')
+                and $request->has('descricao')){
+
+            $local_Trabalho=new local_trabalho();
+            //$fk_local recebe o novo local de trabalho com a chave primaria
+            $fk_local=$local_Trabalho->create($request->only('designacao','descricao'));
+            $fk_local->utente()->save($this->utentes);
+            $utente=$request->input('id');//variavel usada para mandar para a view de novo utilizador
+
+            return redirect()->route('newUser', compact('utente'))->withMessage(trans('quickadmin::admin.roles-controller-successfully_created'))->with (compact('utente'));
+
+        }elseif ($request->input('tipo').equalToIgnoringCase('Estudante') and $request->has('curso_id') and $request->has('regime') and $request->has('sala') and $request->input('id')>2000){
+
+            $this->utentes->regime=$request->input('regime');
+            $this->utentes->sala=$request->input('sala');
+            $this->utentes->curso_id=$request->input('curso_id');
+            $this->utentes->save();
+            $utente=$request->input('id');
+//            echo $utente;
+            return redirect()->route('newUser',compact('utente'))->withMessage(trans('quickadmin::admin.roles-controller-successfully_created'));
+
+        }
+
+        return redirect()->back();
     }
+
+//    public function isStudent($request){
+//        if($request->has('curso_id') and $request->has('regime') and $request->has('sala') and $request->input('id')>2000){
+//            return true;
+//        }
+//        return false;
+//    }
 
     /**
      * Show a role edit page

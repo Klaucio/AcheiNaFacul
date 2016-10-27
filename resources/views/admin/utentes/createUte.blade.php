@@ -6,7 +6,7 @@
 
             <div class="card text-xs-center">
                 <div class="card-header default-color-dark white-text">
-                    <h2>Registe-se</h2>
+                    <h3>Registe-se</h3>
                 </div>
                 <div class="card-block">
                     <h4 class="card-title">Special title treatment</h4>
@@ -24,10 +24,11 @@
 
                     <div class="row">
                         <div class="input-field col s2">
+                            {{-- Espaçamento à esquerda --}}
                         </div>
-                        <div class="input-field col s10">
+                        <div class=" col s10">
                             {!! Form::open(['action'=>'UtentesController@store',  'class' => 'form-horizontal']) !!}
-                            {{ csrf_field() }}
+                            {{ csrf_field() }} 
 
 
                             <div class="form-group">
@@ -38,9 +39,9 @@
                                         <label for="estudante">Estudante</label>
                                     </div>
                                     <div class="input-field col s4">
-                                        <input name="tipo" type="radio" id="funcionario"  value="Funcionario" onClick=ShowHideDiv() />
+                                        <input name="tipo" type="radio" id="funcionario"  value="Funcionário" onClick=ShowHideDiv() />
 
-                                        <label for="funcionario">Funcionario</label>
+                                        <label for="funcionario">Funcionário</label>
                                     </div>
                                 </div>
                             </div>
@@ -110,6 +111,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {!! Form::hidden('local_id', '', array('id' => 'local_id', 'value'=>null))  !!}
 
                             <div class="form-group">
                                 <div class="row">

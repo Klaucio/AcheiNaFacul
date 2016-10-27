@@ -15,6 +15,7 @@ Route::resource('/', 'HomeController');
 Route::resource('perdidos', 'PerdidosController');
 Route::resource('achados', 'AchadosController');
 Route::resource('utentes', 'UtentesController');
+Route::resource('/teste', 'testeController');
 
 Auth::routes();
 
@@ -33,4 +34,10 @@ Route::get('cursos/{id}/createWithId', ['as' => 'newCourse', function ($id) {
     //
     $departamento = \App\Models\departamento::findOrFail($id);
     return view('admin.cursos.createWithId', compact('departamento'));
+}]);
+Route::get('users/{id}/createWithId', ['as' => 'newUser', function ($id) {
+    //
+    $utente = $id;//\App\Models\utente::findOrFail($id)
+//    dd($utente);
+    return view('auth.register', compact('utente'));
 }]);

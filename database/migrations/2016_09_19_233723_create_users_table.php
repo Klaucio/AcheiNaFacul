@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
 //            $table->increments('id');
             $table->bigInteger('id');
+            $table->bigInteger('utente_id');
             $table->primary('id');
             $table->string('name');
             $table->string('email')->unique();
@@ -24,6 +25,10 @@ class CreateUsersTable extends Migration
             $table->foreign('id')->references('id')->on('utentes')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->foreign('utente_id')->references('id')->on('utentes')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

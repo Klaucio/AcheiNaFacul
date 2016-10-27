@@ -26,9 +26,6 @@
           rel="stylesheet"
           type="text/css"/>
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
-    <link href="{{ asset('css/w3.css') }}" rel="stylesheet" type="text/css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     {{--Css do template--}}
@@ -42,7 +39,7 @@
     
     <link href="favicon.ico" rel="shortcut icon">
     <!-- Bootstrap Core CSS -->
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
+{{--    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" >--}}
     <!-- Template CSS -->
     {{--<link href="{{ asset('css/animate.css') }}" rel="stylesheet" type="text/css" >--}}
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" type="text/css" >
@@ -52,7 +49,9 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css" >
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/w3.css') }}" rel="stylesheet" type="text/css" >
 
     <!-- Google Fonts-->
     <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
@@ -81,20 +80,20 @@
                         <div class="col-sm-6 padding-vert-5">
 
                                 @if (Auth::guest())
-                                    <div class="top-right links">
-                                        <div>
+                                    <div class="row top-right links">
+                                        {{--<div >--}}
+                                            <div col-md-8>
                                             <a href="{{ url('/login') }}"><i class="fa fa-user fa-fw"></i>Login</a>
-                                        </div>
-                                        <div>
-                                            <a href="{{ url('/register') }}"><i class="fa fa-pencil fa-fw">Register</i></a>
-                                        </div>
-                                        <div>
-                                            <a href="{{ url('/utentes/create') }}"><i class="fa fa-edit fa-fw"></i>Utente</a>
-                                        </div>
+                                            <a href="{{ url('/utentes/create') }}"><i class="fa fa-edit fa-fw"></i>Register</a>
+                                                <strong >Email:</strong>&nbsp;achei.fakul@uem.ac.mz
+
+                                            </div>
+                                        {{--</div>--}}
+                                        {{--<div class="col-sm-6 text-right padding-vert-5">--}}
+                                            {{--<strong>Email:</strong>&nbsp;achei.fakul@uem.ac.mz--}}
+                                        {{--</div>--}}
                                     </div>
-                                    <div class="col-sm-6 text-right padding-vert-5">
-                                        <strong>Email:</strong>&nbsp;achei.fakul@uem.ac.mz
-                                    </div>
+
                                 @else
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -151,25 +150,6 @@
                                     <li  {{ (Request::is('/home') ? 'class=active' : '') }}>
                                         <a  href="{{url('/home')}}"  class="fa-home">Página Inicial</a>
                                     </li>
-
-
-                                    <li {{ (Request::is('/achados') ? 'class=active' : '') }}}>
-                                        <a href="{{url('/achados')}}"> <span class="fa-copy ">Achados</span></a>
-
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li>
-                                                <a href="{{ route('achados.index') }}"
-                                                        >
-                                                    Listar Achados
-                                                </a>
-                                                <a href="{{ route('achados.create') }}"
-                                                        >
-                                                    Reportar Achado
-                                                </a>
-
-                                            </li>
-                                        </ul>
-                                    </li>
                                     <li>
                                        <a href="{{ URL::to('/perdidos') }}"> <span class="fa-th ">Perdidos</span></a>
                                         <ul class="dropdown-menu" role="menu">
@@ -181,6 +161,23 @@
                                                 <a href="{{ route('perdidos.create') }}"
                                                         >
                                                    Reportar Perdido
+                                                </a>
+
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li {{ (Request::is('/achados') ? 'class=active' : '') }}}>
+                                        <a href="{{url('/achados')}}"> <span class="fa-copy ">Achados</span></a>
+
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a href="{{ route('achados.index') }}"
+                                                >
+                                                    Listar Achados
+                                                </a>
+                                                <a href="{{ route('achados.create') }}"
+                                                >
+                                                    Reportar Achado
                                                 </a>
 
                                             </li>

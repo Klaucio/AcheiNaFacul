@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class utente extends Model
 {
     //
-    protected $fillable=['id','tipo','nome','regime','sala','telefone','curso_id','local_id'];
+    protected $fillable=['id','tipo','nome','regime','sala','telefone','curso_id','local_trabalho_id'];
     public $timestamps=false;
 
     public function curso(){

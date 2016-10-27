@@ -22,11 +22,11 @@ class CreateUtentesTable extends Migration
             $table->string('sala')->nullable();
             $table->string('telefone')->unique();
             $table->integer('curso_id')->unsigned()->nullable();
-            $table->integer('local_id')->unsigned()->nullable();
+            $table->integer('local_trabalho_id')->unsigned()->nullable();
             $table->foreign('curso_id')->references('id')->on('cursos')
                 ->onUpdate('cascade')
                 ->onCascade('set null');
-            $table->foreign('local_id')->references('id')->on('local_trabalhos')
+            $table->foreign('local_trabalho_id')->references('id')->on('local_trabalhos')
                 ->onUpdate('cascade')
                 ->onCascade('set null');
             $table->timestamps();
