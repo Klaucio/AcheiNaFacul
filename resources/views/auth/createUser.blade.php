@@ -29,7 +29,7 @@
                             {!! Form::open(['action'=>'UtentesController@store',  'class' => 'form-horizontal','method'=>"POST"]) !!}
                             {{ csrf_field() }}
                             {{--<form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">--}}
-                            {{ csrf_field() }}
+                            {{--{{ csrf_field() }}--}}
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <div class="row">

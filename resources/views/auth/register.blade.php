@@ -3,7 +3,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-
+{{--{{dd($utente)}}--}}
             <div class="card text-xs-center">
                 <div class="card-header default-color-dark white-text">
                     <h3>Novo Utilizador</h3>
@@ -26,8 +26,9 @@
                         <div class=" col s10">
                         {!! Form::open(['url'=>'/register',  'class' => 'form-horizontal','method'=>"POST"]) !!}
                         {{ csrf_field() }}
+                            {!! Form::hidden('id',$utente)  !!}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <div class="row">
                                 <div class="input-field col s10">
                                     {!! Form::text('name', '', ['class'=>'validade','id'=>'name','value'=>"{{ old('name') }}",'required','autofocus']) !!}
@@ -83,7 +84,6 @@
                                 </div>
                             </div>
                         </div>
-                        {!! Form::hidden('id', $utente)  !!}
 
                         <div class="form-group">
                             <div class="row">

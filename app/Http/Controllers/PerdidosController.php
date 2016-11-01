@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\artigo;
+use Illuminate\Support\Facades\Auth;
 use App\Models\categoria;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -10,11 +11,10 @@ use App\Http\Requests;
 
 class PerdidosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['create']]);
+    }
     public function index()
     {
         //
@@ -61,6 +61,7 @@ class PerdidosController extends Controller
             "local"=> $request->get("local"),
             "descricao_local"=> $request->get("descricao_local"),
             "tipo"=>$request->get("tipo"),
+            "user_id" =>Auth::user()->id,
             "foto"=>$request->file("foto")->getClientOriginalName()
         ));
 

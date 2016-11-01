@@ -71,6 +71,7 @@
                                             </li>
                                         </ul>
 
+
                             </div>
                         </div>
 
@@ -78,7 +79,7 @@
                             <div class="card m-y-1">
                                 <div class="bg-info card-block text-center text-xs-center">
                                     <h2 class="card-title">Artigos Perdidos
-                                        <span class="label label-default label-pill pull-right">17</span>
+                                        <span class="label label-default label-pill pull-right">{{count($perdidos)}}</span>
                                     </h2>
                                 </div>
                                 <ul class="list-group list-group-flush">
@@ -109,6 +110,7 @@
                                                 </div>
                                             </div>
                                         </a>
+
                                     @endforeach
 
                                 </ul>

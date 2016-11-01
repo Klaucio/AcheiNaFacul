@@ -66,6 +66,8 @@ use App\Models\categoria;
                         {!! Form::textarea('descricao_local', '', ['class'=>'w3-input w3-animate-input','placeholder'=>'Descricao do Local']) !!}
                         {!! Form::file('foto','',['class'=>'w3-input w3-animate-input']) !!}
                         {!! Form::hidden('tipo', 'Achado')  !!}
+                        {!! Form::hidden('user_id', '')  !!}
+
 
                         {!! Form::submit('Submeter', ['class'=>'w3-btn w3-hover-green']) !!}
                         {!! Form::close() !!}

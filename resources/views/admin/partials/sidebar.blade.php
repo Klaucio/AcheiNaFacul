@@ -63,6 +63,12 @@
                         <span class="title">Estados</span>
                     </a>
                 </li>
+                <li @if(Request::path() == 'levantamento') class="active" @endif>
+                    <a href="{{ url('levantamento') }}">
+                        <i class="fa fa-gavel"></i>
+                        <span class="title">Levantamento</span>
+                    </a>
+                </li>
 
 
 

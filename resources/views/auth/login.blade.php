@@ -63,6 +63,9 @@
                                         style="margin-right: 15px;">
                                     {{ trans('quickadmin::auth.login-btnlogin') }}
                                 </button>
+                                <a class="btn" href="{{ url('/utentes/create') }}">
+                                    Registar-se
+                                </a>
                             </div>
                         </div>
                     </form>

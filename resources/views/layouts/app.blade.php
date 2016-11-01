@@ -153,17 +153,19 @@
                                     <li>
                                        <a href="{{ URL::to('/perdidos') }}"> <span class="fa-th ">Perdidos</span></a>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li>
-                                                <a href="{{ route('perdidos.index') }}"
-                                                        >
-                                                   Listar Perdidos
-                                                </a>
-                                                <a href="{{ route('perdidos.create') }}"
-                                                        >
-                                                   Reportar Perdido
-                                                </a>
 
-                                            </li>
+                                                <li>
+                                                    <a href="{{ route('perdidos.index') }}"
+                                                            >
+                                                        Listar Perdidos
+                                                    </a>
+                                                    <a href="{{ route('perdidos.create') }}"
+                                                            >
+                                                        Reportar Perdido
+                                                    </a>
+
+                                                </li>
+
                                         </ul>
                                     </li>
                                     <li {{ (Request::is('/achados') ? 'class=active' : '') }}}>

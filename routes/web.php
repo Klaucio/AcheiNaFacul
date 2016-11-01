@@ -16,6 +16,12 @@ Route::resource('perdidos', 'PerdidosController');
 Route::resource('achados', 'AchadosController');
 Route::resource('utentes', 'UtentesController');
 Route::resource('/teste', 'testeController');
+Route::resource('faculdades', 'FaculdadesController');
+Route::resource('departamentos', 'DepartamentosController');
+Route::resource('cursos', 'CursosController');
+Route::resource('categorias', 'CategoriasController');
+Route::resource('estados', 'EstadosController');
+Route::resource('levantamento', 'ReceptorController');
 
 Auth::routes();
 

@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\Models\curso;
 use App\Models\local_trabalho;
 use App\Models\utente;
 use Illuminate\Http\Request;
+use Redirect;
 
 class UtentesController extends Controller
 {
@@ -54,12 +55,14 @@ class UtentesController extends Controller
         $this->utentes->nome=$request->input('nome');
         $this->utentes->telefone=$request->input('telefone');
 
+
         if ($request->input('tipo').equalToIgnoringCase('Funcionário') and $request->has('designacao')
                 and $request->has('descricao')){
-
+//            dd($request->input('designacao'));
             $local_Trabalho=new local_trabalho();
             //$fk_local recebe o novo local de trabalho com a chave primaria
             $fk_local=$local_Trabalho->create($request->only('designacao','descricao'));
+
             $fk_local->utente()->save($this->utentes);
             $utente=$request->input('id');//variavel usada para mandar para a view de novo utilizador
 

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\Models\artigo;
 use App\Models\categoria;
 use Illuminate\Http\Request;
@@ -10,16 +10,15 @@ use App\Http\Requests;
 
 class AchadosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['create']]);
+    }
     public function index()
     {
         //
 
-        $achados=DB::table('artigos')->where('tipo','=','achado')->get();
+        $achados=DB::table('artigos')->where('tipo','=','Achado')->get();
 
         return view('Achado.index')->with('achados',$achados);
     }
@@ -53,10 +52,11 @@ class AchadosController extends Controller
         ]);
         $artigo= new artigo(array (
             "titulo" => $request->get("titulo"),
+            "user_id" =>Auth::user()->id,
             "designacao"=> $request->get("designacao"),
             "descricao"=> $request->get("descricao"),
             "data"=> $request->get("data"),
-            "categoria_id"=>$request->get("categoria_id"),
+            "categoria_id"=>1,//$request->get("categoria_id"),
             "local"=> $request->get("local"),
             "descricao_local"=> $request->get("descricao_local"),
             "tipo"=>$request->get("tipo"),

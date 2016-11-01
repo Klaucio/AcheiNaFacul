@@ -36,7 +36,7 @@ use App\Models\categoria;
                             <h2>Reportar Perdido</h2>
                         </div>
 
-
+                  {{dd($categorias)}}
                         {!! Form::model($artigo,['action'=>'PerdidosController@store','class'=>'class="w3-container"','files'=>true]) !!}
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
@@ -65,6 +65,7 @@ use App\Models\categoria;
                         {!! Form::textarea('descricao_local', '', ['class'=>'w3-input w3-animate-input','placeholder'=>'Descricao do Local']) !!}
                         {!! Form::file('foto','',['class'=>'w3-input w3-animate-input']) !!}
                         {!! Form::hidden('tipo', 'Perdido')  !!}
+                        {!! Form::hidden('user_id', '')  !!}
 
                         {!! Form::submit('Submeter', ['class'=>'w3-btn w3-hover-green']) !!}
                         {!! Form::close() !!}

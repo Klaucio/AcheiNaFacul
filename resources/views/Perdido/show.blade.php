@@ -27,7 +27,7 @@
                           <div class="form-group">
                               <label for="image" class="col-sm-2 control-label"></label>
                               <div class="col-sm-10">
-                                  <img src="{{asset('img/'.$artigo->foto)}}" height="180" width="150" class="img-rounded">
+                                  <img src="{{asset('img/'.$artigo->foto)}}" height="300" width="200" class="img-rounded">
                               </div>
                           </div>
 
