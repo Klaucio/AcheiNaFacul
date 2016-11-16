@@ -50,6 +50,15 @@ class UtentesController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'tipo' => 'required',
+            'nome' => 'required|min:3',
+            'telefone' => 'required',
+//            'descricao' => 'required',
+            'regime' => 'required',
+            'sala' => 'required',
+            'curso_id' => 'required',
+        ]);
         $this->utentes->id=$request->input('id');
         $this->utentes->tipo=$request->input('tipo');
         $this->utentes->nome=$request->input('nome');
@@ -75,7 +84,7 @@ class UtentesController extends Controller
             $this->utentes->curso_id=$request->input('curso_id');
             $this->utentes->save();
             $utente=$request->input('id');
-//            echo $utente;
+//
             return redirect()->route('newUser',compact('utente'))->withMessage(trans('quickadmin::admin.roles-controller-successfully_created'));
 
         }

@@ -28,8 +28,7 @@
                         </div>
                         <div class=" col s10">
                             {!! Form::open(['action'=>'UtentesController@store',  'class' => 'form-horizontal']) !!}
-                            {{ csrf_field() }} 
-
+                            {{ csrf_field() }}
 
                             <div class="form-group">
 

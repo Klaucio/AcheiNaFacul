@@ -19,4 +19,5 @@ return array(
     'f0906e6318348a765ffb6eb24e0d0938' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
     '58571171fd5812e6e447dce228f52f4d' => $vendorDir . '/laravel/framework/src/Illuminate/Support/helpers.php',
     '86ade239cbe8025aa999b5c6eb117f17' => $vendorDir . '/watson/active/src/helpers.php',
+    '8d3b2199cd129cab173c6d6470bfbcb5' => $vendorDir . '/yajra/laravel-oci8/src/helper.php',
 );

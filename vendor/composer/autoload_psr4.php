@@ -9,6 +9,7 @@ return array(
     'phpseclib\\' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
     'Yajra\\Datatables\\' => array($vendorDir . '/yajra/laravel-datatables-oracle/src'),
+    'Yajra\\' => array($vendorDir . '/yajra/laravel-pdo-via-oci8/src', $vendorDir . '/yajra/laravel-oci8/src'),
     'XdgBaseDir\\' => array($vendorDir . '/dnoegel/php-xdg-base-dir/src'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'Watson\\Active\\' => array($vendorDir . '/watson/active/src'),

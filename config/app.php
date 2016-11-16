@@ -167,6 +167,7 @@ return [
         Collective\Remote\RemoteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Watson\Active\ActiveServiceProvider::class,
+        Yajra\Oci8\Oci8ServiceProvider::class,
 
         /*
          * Package Service Providers...

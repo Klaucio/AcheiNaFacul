@@ -97,7 +97,7 @@
                                 @else
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                            {{ Auth::user()->name }}
                                         </a>
 
                                         <ul class="dropdown-menu" role="menu">
@@ -186,15 +186,6 @@
                                         </ul>
                                     </li>
 
-                                    {{--<li  {{ Request::segment(1)=='home' ? 'class="active"' : '' }}>--}}
-                                        {{--{{ HTML::link('/home', 'Pagina inicial') }}--}}
-                                    {{--</li>--}}
-                                    {{--<li  {{ Request::segment(1)=='achados' ? 'class="active"' : '' }}>--}}
-                                        {{--{{ HTML::link('/achados', 'Achados') }}--}}
-                                    {{--</li>--}}
-                                    {{--<li  {{ Request::is('perdidos') ? 'class="active"' : '' }}>--}}
-                                        {{--{{ HTML::link('/perdidos', 'Perdidos') }}--}}
-                                    {{--</li>--}}
 
                                 </ul>
                             </div>

@@ -21,7 +21,9 @@ class CreateArtigosTable extends Migration
             $table->string('foto');
             $table->string('tipo');
             $table->string('local');
-            $table->string('descricao_local');
+            $table->string('local_actual');
+            $table->string('descricao_local')->nullable();
+            $table->string('descricao_local_actual')->nullable();
             $table->integer('categoria_id')->unsigned();
             $table->bigInteger('user_id');
             $table->bigInteger('receptor_id')->nullable();

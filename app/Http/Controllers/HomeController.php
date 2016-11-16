@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $achados=DB::table('artigos')->where('tipo','=','achado')->get();
+        $achados=DB::table('artigos')->where('tipo','=','Achado')->get();
         $perdidos=DB::table('artigos')->where('tipo','=','Perdido')->get();
 
 

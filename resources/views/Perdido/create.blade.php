@@ -36,7 +36,7 @@ use App\Models\categoria;
                             <h2>Reportar Perdido</h2>
                         </div>
 
-                  {{dd($categorias)}}
+                  {{--{{dd($categorias)}}--}}
                         {!! Form::model($artigo,['action'=>'PerdidosController@store','class'=>'class="w3-container"','files'=>true]) !!}
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
@@ -50,17 +50,17 @@ use App\Models\categoria;
                         @endif
                         @if ($message = Session::get('success'))
                             <div class="alert alert-success alert-block">
-                                <button type="button" class="close" data-dismiss="alert">�</button>
+                                <button type="button" class="close" data-dismiss="alert">×</button>
                                 <strong>{{ $message }}</strong>
                             </div>
                             {{--<img src="images/{{ Session::get('image') }}">--}}
                         @endif
-                        {!! Form::text('titulo','',['class'=>'w3-input w3-animate-input','placeholder'=>'Titulo do Anuncio']) !!}
-                        {!! Form::text('designacao',isset($artigo->designacao)? $artigo->designacao: '',isset($artigo->designacao)?['class'=>'w3-input w3-animate-input','placeholder'=>'Nome do Artigo','disabled']:['class'=>'w3-input w3-animate-input','placeholder'=>'Nome do Artigo']) !!}
+                       {!! Form::text('designacao',isset($artigo->designacao)? $artigo->designacao: '',isset($artigo->designacao)?['class'=>'w3-input w3-animate-input','placeholder'=>'Nome do Artigo','disabled']:['class'=>'w3-input w3-animate-input','placeholder'=>'Nome do Artigo']) !!}
                         {!! Form::text('descricao','',['class'=>'w3-input w3-animate-input','placeholder'=>'Descricao do Artigo']) !!}
                         {{--{!! Form::label('data', 'Data em que perdeu') !!}--}}
                         {!! Form::date('data','',['class'=>'w3-input w3-animate-input']) !!}
-                        {!! Form::select('id',$categorias,isset($artigo->categoria->designacao)? $artigo->categoria->designacao :null,isset($artigo->designacao)?['class'=>'w3-select','disabled']:['class'=>'w3-select'] ) !!}
+                        {!! Form::select('id',$categorias,null,['class'=>'w3-select'] ) !!}
+                        {{--{!! Form::select('id',$categorias,isset($artigo->categoria->designacao)? $artigo->categoria->designacao :null,isset($artigo->designacao)?['class'=>'w3-select','disabled']:['class'=>'w3-select'] ) !!}--}}
                         {!! Form::text('local','',['class'=>'w3-input w3-animate-input','placeholder'=>'Local onde perdeu']) !!}
                         {!! Form::textarea('descricao_local', '', ['class'=>'w3-input w3-animate-input','placeholder'=>'Descricao do Local']) !!}
                         {!! Form::file('foto','',['class'=>'w3-input w3-animate-input']) !!}

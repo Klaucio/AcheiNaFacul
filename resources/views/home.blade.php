@@ -74,7 +74,7 @@
                         <main class="col-md-6">
                             <div class="card m-y-1">
                                 <div class="bg-info card-block text-center text-xs-center">
-                                    <h2 class="card-title achei">Artigos Achados
+                                    <h2 class="card-title">Artigos Achados
                                         <span class="label label-default label-pill pull-right">{{count($achados)}}</span>
                                     </h2>
                                 </div>

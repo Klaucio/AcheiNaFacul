@@ -45,7 +45,7 @@ class AchadosController extends Controller
     {
         $this->validate($request, [
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'titulo' => 'required|max:255|min:3',
+//            'titulo' => 'required|max:255|min:3',
             'designacao' => 'required|min:3',
             'data' => 'required',
             'local' => 'required',
